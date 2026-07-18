@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -6,7 +7,11 @@
 
 <title>CodesJG | Soporte Oficial</title>
 
-<meta name="description" content="Centro oficial de soporte de CodesJG para aplicaciones empresariales.">
+<meta
+name="description"
+content="Centro oficial de soporte de CodesJG para aplicaciones empresariales."
+
+>
 
 <style>
 
@@ -34,13 +39,31 @@ text-align:center;
 color:white;
 }
 
-header h1{
-font-size:56px;
+.brand{
+display:flex;
+align-items:center;
+justify-content:center;
+gap:16px;
 margin-bottom:15px;
 }
 
+.brand img{
+width:68px;
+height:68px;
+object-fit:contain;
+border-radius:16px;
+background:white;
+padding:6px;
+box-shadow:0 8px 20px rgba(0,0,0,.18);
+}
+
+header h1{
+font-size:56px;
+margin:0;
+}
+
 header p{
-max-width:700px;
+max-width:750px;
 margin:auto;
 font-size:20px;
 opacity:.95;
@@ -52,11 +75,28 @@ top:0;
 background:white;
 display:flex;
 justify-content:center;
+align-items:center;
 gap:20px;
 padding:15px;
 box-shadow:0 2px 10px rgba(0,0,0,.08);
 z-index:999;
 flex-wrap:wrap;
+}
+
+.nav-brand{
+display:flex;
+align-items:center;
+gap:8px;
+margin-right:15px;
+font-weight:bold;
+color:#0d8f54;
+}
+
+.nav-brand img{
+width:34px;
+height:34px;
+object-fit:contain;
+border-radius:8px;
 }
 
 nav a{
@@ -74,6 +114,7 @@ section{
 max-width:1100px;
 margin:auto;
 padding:70px 20px;
+scroll-margin-top:80px;
 }
 
 .card{
@@ -106,8 +147,8 @@ margin:8px 0;
 
 .apps{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
 margin-top:30px;
 }
 
@@ -116,11 +157,73 @@ background:#eef8f2;
 padding:25px;
 border-radius:15px;
 border-left:6px solid #13b76c;
+display:flex;
+flex-direction:column;
+height:100%;
+transition:transform .2s,box-shadow .2s;
+}
+
+.app:hover{
+transform:translateY(-4px);
+box-shadow:0 10px 24px rgba(0,0,0,.10);
 }
 
 .app h3{
 margin-top:0;
 color:#0d8f54;
+}
+
+.app p{
+margin-bottom:12px;
+}
+
+.app ul{
+margin-top:5px;
+}
+
+.status{
+display:inline-block;
+width:max-content;
+max-width:100%;
+padding:6px 12px;
+border-radius:999px;
+font-size:13px;
+font-weight:bold;
+margin-bottom:15px;
+}
+
+.status-en-uso{
+background:#d9f7e6;
+color:#08783f;
+}
+
+.status-produccion{
+background:#fff1cc;
+color:#8a5a00;
+}
+
+.status-proximamente{
+background:#dceeff;
+color:#155a96;
+}
+
+.email-box{
+background:#eef8f2;
+border-left:5px solid #13b76c;
+padding:18px;
+border-radius:10px;
+margin:20px 0;
+}
+
+.email-box a{
+color:#0d8f54;
+font-weight:bold;
+text-decoration:none;
+word-break:break-word;
+}
+
+.email-box a:hover{
+text-decoration:underline;
 }
 
 .button{
@@ -147,6 +250,11 @@ padding:35px;
 margin-top:60px;
 }
 
+footer h3{
+color:white;
+margin-top:0;
+}
+
 hr{
 margin:35px 0;
 border:none;
@@ -154,6 +262,20 @@ border-top:1px solid #ddd;
 }
 
 @media(max-width:700px){
+
+header{
+padding:65px 20px;
+}
+
+.brand{
+flex-direction:column;
+gap:10px;
+}
+
+.brand img{
+width:62px;
+height:62px;
+}
 
 header h1{
 font-size:38px;
@@ -167,6 +289,21 @@ h2{
 font-size:28px;
 }
 
+.nav-brand{
+width:100%;
+justify-content:center;
+margin-right:0;
+margin-bottom:5px;
+}
+
+section{
+padding:50px 16px;
+}
+
+.card{
+padding:25px 20px;
+}
+
 }
 
 </style>
@@ -175,9 +312,15 @@ font-size:28px;
 
 <body>
 
-<header>
+<header id="inicio">
+
+<div class="brand">
+
+<img src="logo.png" alt="Logo de CodesJG">
 
 <h1>CodesJG</h1>
+
+</div>
 
 <p>
 
@@ -190,6 +333,14 @@ reportes, finanzas y administración empresarial.
 </header>
 
 <nav>
+
+<div class="nav-brand">
+
+<img src="logo.png" alt="Logo de CodesJG">
+
+<span>CodesJG</span>
+
+</div>
 
 <a href="#inicio">Inicio</a>
 
@@ -205,7 +356,7 @@ reportes, finanzas y administración empresarial.
 
 </nav>
 
-<section id="inicio">
+<section>
 
 <div class="card">
 
@@ -216,13 +367,15 @@ reportes, finanzas y administración empresarial.
 Este es el sitio oficial de soporte de <strong>CodesJG</strong>.
 
 Aquí encontrarás información sobre nuestras aplicaciones,
-políticas de privacidad, soporte técnico y eliminación de cuentas.
+políticas de privacidad, soporte técnico y solicitudes de
+eliminación de cuentas.
 
 </p>
 
 </div>
 
 </section>
+
 <section id="apps">
 
 <div class="card">
@@ -230,20 +383,33 @@ políticas de privacidad, soporte técnico y eliminación de cuentas.
 <h2>Nuestras aplicaciones</h2>
 
 <p>
+
 CodesJG desarrolla aplicaciones móviles y sistemas de gestión
-adaptados a las necesidades de cada negocio.
+adaptados a las necesidades de cada negocio. Algunos de nuestros
+desarrollos ya se encuentran en uso por negocios de la ciudad de
+Maicao, La Guajira.
+
 </p>
 
 <div class="apps">
 
 <div class="app">
+
 <h3>📱 Gestor de Mi Negocio</h3>
+
+<span class="status status-proximamente">
+Próximamente en Google Play
+</span>
 
 <p>
 
-Aplicación para administrar negocios con funciones de:
+Aplicación empresarial diseñada para pequeños y medianos negocios.
+Actualmente se encuentra en su etapa final de preparación y está
+próxima a lanzarse oficialmente en Google Play.
 
 </p>
+
+<h4>Funciones principales</h4>
 
 <ul>
 
@@ -269,14 +435,44 @@ Aplicación para administrar negocios con funciones de:
 
 <div class="app">
 
-<h3>🏪 ERP Empresarial</h3>
+<h3>🏢 ERP Empresarial</h3>
+
+<span class="status status-produccion">
+En producción
+</span>
 
 <p>
 
-Sistema multiempresa para administrar varios locales desde una
-misma plataforma.
+Aplicación ERP empresarial desarrollada para administrar cinco
+negocios ubicados en la ciudad de Maicao, La Guajira. Permite
+centralizar la información y controlar diferentes establecimientos
+desde una misma plataforma.
 
 </p>
+
+<h4>Funciones principales</h4>
+
+<ul>
+
+<li>Gestión de múltiples negocios</li>
+
+<li>Ventas</li>
+
+<li>Gastos</li>
+
+<li>Inventario por local</li>
+
+<li>Bodega central</li>
+
+<li>Productos y servicios</li>
+
+<li>Caja</li>
+
+<li>Reportes empresariales</li>
+
+<li>Usuarios, roles y permisos</li>
+
+</ul>
 
 </div>
 
@@ -284,12 +480,39 @@ misma plataforma.
 
 <h3>🍔 Legendario App</h3>
 
+<span class="status status-en-uso">
+En uso
+</span>
+
 <p>
 
-Sistema para restaurantes con control de ventas,
-inventario, productos, gastos y reportes.
+Aplicación desarrollada para el restaurante <strong>El Legendario</strong>, ubicado en la ciudad de
+Maicao, La Guajira. Actualmente es utilizada para administrar
+las operaciones principales del restaurante.
 
 </p>
+
+<h4>Funciones principales</h4>
+
+<ul>
+
+<li>Ventas rápidas</li>
+
+<li>Registro de ventas</li>
+
+<li>Productos</li>
+
+<li>Inventario</li>
+
+<li>Gastos</li>
+
+<li>Usuarios</li>
+
+<li>Reportes</li>
+
+<li>Panel administrativo</li>
+
+</ul>
 
 </div>
 
@@ -297,12 +520,39 @@ inventario, productos, gastos y reportes.
 
 <h3>👕 Ziba Clothes</h3>
 
+<span class="status status-en-uso">
+En uso
+</span>
+
 <p>
 
-Sistema para tiendas de ropa con control de clientes,
-inventario, ventas y proveedores.
+Aplicación desarrollada para una tienda de ropa ubicada en la
+ciudad de Maicao, La Guajira. Actualmente se utiliza para facilitar
+el control de las ventas, los productos y el inventario del negocio.
 
 </p>
+
+<h4>Funciones principales</h4>
+
+<ul>
+
+<li>Ventas</li>
+
+<li>Inventario de prendas</li>
+
+<li>Productos</li>
+
+<li>Clientes</li>
+
+<li>Proveedores</li>
+
+<li>Gastos</li>
+
+<li>Apartados</li>
+
+<li>Reportes</li>
+
+</ul>
 
 </div>
 
@@ -320,7 +570,9 @@ inventario, ventas y proveedores.
 
 <p>
 
-En CodesJG respetamos la privacidad de nuestros usuarios.
+En CodesJG respetamos la privacidad de nuestros usuarios y
+trabajamos para proteger la información registrada en nuestras
+aplicaciones.
 
 </p>
 
@@ -334,11 +586,11 @@ En CodesJG respetamos la privacidad de nuestros usuarios.
 
 <li>Correo electrónico.</li>
 
-<li>Número telefónico (opcional).</li>
+<li>Número telefónico, cuando sea proporcionado.</li>
 
 <li>Información del negocio registrada por el usuario.</li>
 
-<li>Productos, ventas e inventarios creados dentro de la aplicación.</li>
+<li>Productos, ventas, gastos e inventarios creados dentro de la aplicación.</li>
 
 </ul>
 
@@ -354,7 +606,7 @@ En CodesJG respetamos la privacidad de nuestros usuarios.
 
 <li>Brindar soporte técnico.</li>
 
-<li>Mejorar la estabilidad del servicio.</li>
+<li>Mejorar la estabilidad y el funcionamiento del servicio.</li>
 
 </ul>
 
@@ -362,9 +614,9 @@ En CodesJG respetamos la privacidad de nuestros usuarios.
 
 <p>
 
-La información es almacenada utilizando servicios seguros de
-Google Firebase y únicamente es utilizada para el correcto
-funcionamiento de las aplicaciones.
+La información es almacenada utilizando servicios de
+Google Firebase y es utilizada únicamente para el correcto
+funcionamiento de las aplicaciones y la prestación de sus servicios.
 
 </p>
 
@@ -372,7 +624,8 @@ funcionamiento de las aplicaciones.
 
 <p>
 
-CodesJG no vende la información personal de los usuarios.
+CodesJG no vende ni comercializa la información personal de los
+usuarios.
 
 </p>
 
@@ -388,29 +641,44 @@ CodesJG no vende la información personal de los usuarios.
 
 <p>
 
-Si deseas eliminar tu cuenta y los datos asociados,
-puedes solicitarlo escribiendo al siguiente correo:
+Para solicitar la eliminación de tu cuenta y de los datos asociados,
+debes escribir directamente al correo oficial de soporte de CodesJG.
+
+</p>
+
+<div class="email-box">
+
+<p>
+
+<strong>Correo para solicitudes de eliminación:</strong><br>
+
+<a href="mailto:codesjg1@gmail.com">
+codesjg1@gmail.com
+</a>
+
+</p>
+
+</div>
+
+<p>
+
+En el mensaje debes incluir el correo electrónico utilizado para
+crear la cuenta y escribir como asunto:
 
 </p>
 
 <p>
 
-<strong>codesjg1@gmail.com</strong>
+<strong>Solicitud de eliminación de cuenta</strong>
 
 </p>
-
-<a class="button"
-href="mailto:codesjg1@gmail.com?subject=Solicitud%20de%20eliminación%20de%20cuenta">
-
-Solicitar eliminación
-
-</a>
 
 <hr>
 
 <p>
 
-Al aprobar la solicitud se eliminarán:
+Después de verificar la solicitud, podrán eliminarse los siguientes
+datos asociados:
 
 </p>
 
@@ -418,17 +686,25 @@ Al aprobar la solicitud se eliminarán:
 
 <li>Cuenta del usuario.</li>
 
-<li>Información personal.</li>
+<li>Información personal registrada.</li>
 
-<li>Datos del negocio asociados.</li>
+<li>Datos del negocio asociados a la cuenta.</li>
 
 <li>Información almacenada en nuestros servidores.</li>
 
 </ul>
 
+<p>
+
+La eliminación se realizará después de verificar que la solicitud
+corresponde al propietario de la cuenta.
+
+</p>
+
 </div>
 
 </section>
+
 <section id="soporte">
 
 <div class="card">
@@ -464,8 +740,11 @@ puedes comunicarte directamente con el equipo de CodesJG.
 
 </ul>
 
-<a class="button"
-href="mailto:codesjg1@gmail.com?subject=Soporte%20CodesJG">
+<a
+class="button"
+href="mailto:codesjg1@gmail.com?subject=Soporte%20técnico%20CodesJG"
+
+>
 
 Solicitar soporte
 
@@ -484,6 +763,7 @@ Solicitar soporte
 <p>
 
 <strong>Desarrollador:</strong><br>
+
 CodesJG
 
 </p>
@@ -494,7 +774,7 @@ CodesJG
 
 <a href="mailto:codesjg1@gmail.com">
 
-codesjg1@gmail.com
+[codesjg1@gmail.com](mailto:codesjg1@gmail.com)
 
 </a>
 
