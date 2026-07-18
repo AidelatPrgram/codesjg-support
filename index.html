@@ -1,462 +1,537 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Gestor de Mi Negocio | Soporte CodesJG</title>
+<title>CodesJG | Soporte Oficial</title>
 
-  <style>
-    :root {
-      --primary: #15803d;
-      --primary-dark: #14532d;
-      --primary-light: #dcfce7;
-      --background: #f4f7f5;
-      --surface: #ffffff;
-      --text: #17201a;
-      --muted: #647067;
-      --border: #dbe4dd;
-    }
+<meta name="description" content="Centro oficial de soporte de CodesJG para aplicaciones empresariales.">
 
-    * {
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
 
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: var(--background);
-      color: var(--text);
-      line-height: 1.7;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      background: rgba(255, 255, 255, 0.96);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(10px);
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    .nav {
-      max-width: 1050px;
-      margin: auto;
-      padding: 16px 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f7fb;
+color:#222;
+line-height:1.6;
+}
 
-    .brand {
-      font-weight: 800;
-      color: var(--primary-dark);
-      text-decoration: none;
-      font-size: 18px;
-    }
+header{
+background:linear-gradient(135deg,#0d8f54,#13b76c);
+padding:90px 20px;
+text-align:center;
+color:white;
+}
 
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      margin-left: 18px;
-      font-size: 14px;
-      font-weight: 600;
-    }
+header h1{
+font-size:56px;
+margin-bottom:15px;
+}
 
-    nav a:hover {
-      color: var(--primary);
-    }
+header p{
+max-width:700px;
+margin:auto;
+font-size:20px;
+opacity:.95;
+}
 
-    main {
-      max-width: 1050px;
-      margin: auto;
-      padding: 35px 22px 70px;
-    }
+nav{
+position:sticky;
+top:0;
+background:white;
+display:flex;
+justify-content:center;
+gap:20px;
+padding:15px;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+z-index:999;
+flex-wrap:wrap;
+}
 
-    .hero {
-      padding: 55px 40px;
-      color: white;
-      border-radius: 26px;
-      background:
-        radial-gradient(circle at top right, #4ade80 0, transparent 35%),
-        linear-gradient(135deg, var(--primary-dark), var(--primary));
-      box-shadow: 0 18px 45px rgba(20, 83, 45, 0.18);
-    }
+nav a{
+text-decoration:none;
+color:#0d8f54;
+font-weight:bold;
+transition:.25s;
+}
 
-    .hero h1 {
-      margin: 0 0 12px;
-      font-size: clamp(34px, 6vw, 58px);
-      line-height: 1.05;
-    }
+nav a:hover{
+color:#0a6d40;
+}
 
-    .hero p {
-      max-width: 720px;
-      margin: 0 0 26px;
-      font-size: 18px;
-      color: #e9fff0;
-    }
+section{
+max-width:1100px;
+margin:auto;
+padding:70px 20px;
+}
 
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
+.card{
+background:white;
+padding:35px;
+border-radius:16px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+margin-bottom:35px;
+}
 
-    .button {
-      display: inline-block;
-      padding: 13px 19px;
-      border-radius: 13px;
-      text-decoration: none;
-      font-weight: 700;
-      transition: transform 0.2s ease;
-    }
+h2{
+color:#0d8f54;
+margin-bottom:20px;
+font-size:34px;
+}
 
-    .button:hover {
-      transform: translateY(-2px);
-    }
+h3{
+margin-top:25px;
+margin-bottom:10px;
+color:#222;
+}
 
-    .button-light {
-      background: white;
-      color: var(--primary-dark);
-    }
+ul{
+padding-left:22px;
+}
 
-    .button-outline {
-      color: white;
-      border: 1px solid rgba(255,255,255,.55);
-    }
+li{
+margin:8px 0;
+}
 
-    section {
-      margin-top: 28px;
-      padding: 34px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      box-shadow: 0 8px 28px rgba(31, 47, 36, 0.05);
-      scroll-margin-top: 90px;
-    }
+.apps{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
 
-    h2 {
-      margin-top: 0;
-      color: var(--primary-dark);
-      font-size: 29px;
-    }
+.app{
+background:#eef8f2;
+padding:25px;
+border-radius:15px;
+border-left:6px solid #13b76c;
+}
 
-    h3 {
-      margin-top: 30px;
-      color: var(--primary);
-    }
+.app h3{
+margin-top:0;
+color:#0d8f54;
+}
 
-    .notice {
-      padding: 18px;
-      margin: 20px 0;
-      background: var(--primary-light);
-      border-left: 5px solid var(--primary);
-      border-radius: 12px;
-    }
+.button{
+display:inline-block;
+padding:14px 28px;
+background:#13b76c;
+color:white;
+text-decoration:none;
+border-radius:10px;
+margin-top:15px;
+font-weight:bold;
+transition:.2s;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 15px;
-    }
+.button:hover{
+background:#0d8f54;
+}
 
-    .card {
-      padding: 19px;
-      border-radius: 16px;
-      border: 1px solid var(--border);
-      background: #fbfdfb;
-    }
+footer{
+background:#111;
+color:white;
+text-align:center;
+padding:35px;
+margin-top:60px;
+}
 
-    ul, ol {
-      padding-left: 23px;
-    }
+hr{
+margin:35px 0;
+border:none;
+border-top:1px solid #ddd;
+}
 
-    .contact-email {
-      overflow-wrap: anywhere;
-      color: var(--primary);
-      font-weight: 700;
-    }
+@media(max-width:700px){
 
-    footer {
-      max-width: 1050px;
-      margin: auto;
-      padding: 25px 22px 45px;
-      color: var(--muted);
-      text-align: center;
-      font-size: 14px;
-    }
+header h1{
+font-size:38px;
+}
 
-    @media (max-width: 680px) {
-      .nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
+header p{
+font-size:17px;
+}
 
-      nav a {
-        margin: 0 14px 0 0;
-      }
+h2{
+font-size:28px;
+}
 
-      .hero {
-        padding: 38px 23px;
-      }
+}
 
-      section {
-        padding: 25px 20px;
-      }
-    }
-  </style>
+</style>
+
 </head>
 
 <body>
 
 <header>
-  <div class="nav">
-    <a class="brand" href="#inicio">CodesJG</a>
 
-    <nav>
-      <a href="#soporte">Soporte</a>
-      <a href="#privacidad">Privacidad</a>
-      <a href="#eliminar-cuenta">Eliminar cuenta</a>
-    </nav>
-  </div>
+<h1>CodesJG</h1>
+
+<p>
+
+Desarrollamos soluciones de software para negocios,
+empresas y comercios, enfocadas en ventas, inventarios,
+reportes, finanzas y administración empresarial.
+
+</p>
+
 </header>
 
-<main>
+<nav>
 
-  <div class="hero" id="inicio">
-    <h1>Gestor de Mi Negocio</h1>
+<a href="#inicio">Inicio</a>
 
-    <p>
-      Aplicación desarrollada por CodesJG para administrar ventas,
-      inventario, clientes, proveedores, gastos, caja y otros procesos
-      importantes de un negocio.
-    </p>
+<a href="#apps">Aplicaciones</a>
 
-    <div class="buttons">
-      <a class="button button-light" href="#soporte">
-        Contactar soporte
-      </a>
+<a href="#privacidad">Privacidad</a>
 
-      <a class="button button-outline" href="#privacidad">
-        Política de privacidad
-      </a>
-    </div>
-  </div>
+<a href="#eliminar-cuenta">Eliminar cuenta</a>
 
-  <section id="soporte">
-    <h2>Soporte y contacto</h2>
+<a href="#soporte">Soporte</a>
 
-    <p>
-      Para recibir ayuda, reportar un problema o enviar una sugerencia,
-      comunícate con CodesJG.
-    </p>
+<a href="#contacto">Contacto</a>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Soporte técnico</h3>
-        <p>
-          Describe el problema y, cuando sea posible, incluye una captura
-          de pantalla y los pasos que realizaste.
-        </p>
-      </div>
+</nav>
 
-      <div class="card">
-        <h3>Sugerencias</h3>
-        <p>
-          Puedes proponer nuevas funciones o mejoras para futuras versiones
-          de Gestor de Mi Negocio.
-        </p>
-      </div>
-    </div>
+<section id="inicio">
 
-    <div class="notice">
-      Correo:
-      <a
-        class="contact-email"
-        href="mailto:codesjg1@gmail.com?subject=Soporte%20-%20Gestor%20de%20Mi%20Negocio"
-      >
-        CORREO_CODESJG@gmail.com
-      </a>
-    </div>
-  </section>
+<div class="card">
 
-  <section id="privacidad">
-    <h2>Política de privacidad</h2>
+<h2>Bienvenido</h2>
 
-    <p><strong>Última actualización:</strong> julio de 2026.</p>
+<p>
 
-    <p>
-      Esta política explica cómo CodesJG trata los datos utilizados por
-      la aplicación <strong>Gestor de Mi Negocio</strong>.
-    </p>
+Este es el sitio oficial de soporte de <strong>CodesJG</strong>.
 
-    <h3>1. Datos recopilados</h3>
+Aquí encontrarás información sobre nuestras aplicaciones,
+políticas de privacidad, soporte técnico y eliminación de cuentas.
 
-    <p>
-      La aplicación puede recopilar información proporcionada directamente
-      por los usuarios, incluyendo:
-    </p>
+</p>
 
-    <ul>
-      <li>Nombre.</li>
-      <li>Dirección de correo electrónico.</li>
-      <li>Identificador de usuario.</li>
-      <li>Ciudad o dirección del negocio.</li>
-      <li>Número de teléfono, cuando el usuario decide proporcionarlo.</li>
-      <li>Fotografías seleccionadas para productos, perfil o negocio.</li>
-      <li>Productos, ventas, gastos, clientes, proveedores e inventario.</li>
-      <li>Descripciones, notas y observaciones escritas por el usuario.</li>
-    </ul>
+</div>
 
-    <h3>2. Finalidad del tratamiento</h3>
+</section>
+<section id="apps">
 
-    <p>
-      Los datos son utilizados para crear y administrar cuentas, prestar
-      las funciones de la aplicación, sincronizar la información del negocio,
-      generar reportes y ofrecer soporte técnico.
-    </p>
+<div class="card">
 
-    <h3>3. Almacenamiento y proveedores</h3>
+<h2>Nuestras aplicaciones</h2>
 
-    <p>
-      La aplicación puede utilizar servicios de Firebase proporcionados por
-      Google, incluyendo autenticación, base de datos y almacenamiento en la
-      nube. Estos servicios actúan como proveedores tecnológicos necesarios
-      para el funcionamiento de la aplicación.
-    </p>
+<p>
+CodesJG desarrolla aplicaciones móviles y sistemas de gestión
+adaptados a las necesidades de cada negocio.
+</p>
 
-    <h3>4. Seguridad</h3>
+<div class="apps">
 
-    <p>
-      La información transmitida entre la aplicación y sus servicios se
-      protege mediante conexiones cifradas. CodesJG aplica medidas razonables
-      para limitar accesos no autorizados y proteger los datos.
-    </p>
+<div class="app">
+<h3>📱 Gestor de Mi Negocio</h3>
 
-    <h3>5. Compartición de datos</h3>
+<p>
 
-    <p>
-      CodesJG no vende los datos personales de los usuarios. La información
-      puede ser procesada por proveedores tecnológicos necesarios para prestar
-      el servicio o cuando exista una obligación legal.
-    </p>
+Aplicación para administrar negocios con funciones de:
 
-    <h3>6. Conservación y eliminación</h3>
+</p>
 
-    <p>
-      Los datos se conservan mientras la cuenta permanezca activa o durante
-      el tiempo necesario para prestar el servicio. El usuario puede solicitar
-      la eliminación de su cuenta y los datos asociados mediante la sección
-      de eliminación de cuenta incluida en esta página.
-    </p>
+<ul>
 
-    <p>
-      Algunos registros podrían conservarse durante un período adicional
-      cuando sea necesario para cumplir obligaciones legales, resolver
-      disputas o proteger la seguridad del servicio. Cuando no exista una
-      razón legítima de conservación, los datos serán eliminados.
-    </p>
+<li>Ventas</li>
 
-    <h3>7. Cambios en esta política</h3>
+<li>Inventario</li>
 
-    <p>
-      Esta política puede actualizarse para reflejar cambios en la aplicación,
-      en los servicios utilizados o en las obligaciones aplicables.
-    </p>
+<li>Productos</li>
 
-    <h3>8. Contacto de privacidad</h3>
+<li>Clientes</li>
 
-    <p>
-      Para consultas sobre privacidad:
-      <a
-        class="contact-email"
-        href="mailto:codesjg1@gmail.com?subject=Privacidad%20-%20Gestor%20de%20Mi%20Negocio"
-      >
-        CORREO_CODESJG@gmail.com
-      </a>
-    </p>
-  </section>
+<li>Proveedores</li>
 
-  <section id="eliminar-cuenta">
-    <h2>Eliminar cuenta y datos asociados</h2>
+<li>Gastos</li>
 
-    <p>
-      Los usuarios de <strong>Gestor de Mi Negocio</strong> pueden solicitar
-      la eliminación permanente de su cuenta y de los datos asociados.
-    </p>
+<li>Reportes</li>
 
-    <div class="notice">
-      <strong>Cómo solicitar la eliminación:</strong>
+<li>Control financiero</li>
 
-      <ol>
-        <li>
-          Envía un correo desde la dirección asociada a tu cuenta.
-        </li>
-        <li>
-          Utiliza el asunto:
-          <strong>Eliminar cuenta - Gestor de Mi Negocio</strong>.
-        </li>
-        <li>
-          Indica el correo de la cuenta y el nombre del negocio.
-        </li>
-        <li>
-          CodesJG podrá solicitar una verificación razonable para confirmar
-          que la solicitud proviene del titular de la cuenta.
-        </li>
-      </ol>
+</ul>
 
-      <a
-        class="button button-light"
-        href="mailto:codesjg1@gmail.com?subject=Eliminar%20cuenta%20-%20Gestor%20de%20Mi%20Negocio"
-      >
-        Solicitar eliminación
-      </a>
-    </div>
+</div>
 
-    <h3>Datos que se eliminarán</h3>
+<div class="app">
 
-    <ul>
-      <li>Cuenta de acceso.</li>
-      <li>Perfil y datos personales asociados.</li>
-      <li>Información del negocio vinculada a la cuenta.</li>
-      <li>Productos, clientes, proveedores, ventas, gastos e inventario.</li>
-      <li>Fotografías y contenido asociado a la cuenta.</li>
-    </ul>
+<h3>🏪 ERP Empresarial</h3>
 
-    <h3>Datos que podrían conservarse</h3>
+<p>
 
-    <p>
-      Algunos datos podrán conservarse únicamente cuando exista una obligación
-      legal, fiscal, de seguridad o de prevención de fraude. Cuando aplique,
-      se conservarán solo durante el período necesario.
-    </p>
+Sistema multiempresa para administrar varios locales desde una
+misma plataforma.
 
-    <h3>Tiempo de atención</h3>
+</p>
 
-    <p>
-      La solicitud será revisada y procesada en un plazo razonable, normalmente
-      dentro de los 30 días calendario siguientes a la verificación de la
-      identidad del solicitante.
-    </p>
+</div>
 
-    <p>
-      Contacto:
-      <a
-        class="contact-email"
-        href="mailto:codesjg1@gmail.com?subject=Eliminar%20cuenta%20-%20Gestor%20de%20Mi%20Negocio"
-      >
-        CORREO_CODESJG@gmail.com
-      </a>
-    </p>
-  </section>
+<div class="app">
 
-</main>
+<h3>🍔 Legendario App</h3>
+
+<p>
+
+Sistema para restaurantes con control de ventas,
+inventario, productos, gastos y reportes.
+
+</p>
+
+</div>
+
+<div class="app">
+
+<h3>👕 Ziba Clothes</h3>
+
+<p>
+
+Sistema para tiendas de ropa con control de clientes,
+inventario, ventas y proveedores.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="privacidad">
+
+<div class="card">
+
+<h2>Política de privacidad</h2>
+
+<p>
+
+En CodesJG respetamos la privacidad de nuestros usuarios.
+
+</p>
+
+<hr>
+
+<h3>Información recopilada</h3>
+
+<ul>
+
+<li>Nombre del usuario.</li>
+
+<li>Correo electrónico.</li>
+
+<li>Número telefónico (opcional).</li>
+
+<li>Información del negocio registrada por el usuario.</li>
+
+<li>Productos, ventas e inventarios creados dentro de la aplicación.</li>
+
+</ul>
+
+<h3>Uso de la información</h3>
+
+<ul>
+
+<li>Permitir el acceso a la cuenta.</li>
+
+<li>Sincronizar la información entre dispositivos.</li>
+
+<li>Mostrar reportes y estadísticas.</li>
+
+<li>Brindar soporte técnico.</li>
+
+<li>Mejorar la estabilidad del servicio.</li>
+
+</ul>
+
+<h3>Seguridad</h3>
+
+<p>
+
+La información es almacenada utilizando servicios seguros de
+Google Firebase y únicamente es utilizada para el correcto
+funcionamiento de las aplicaciones.
+
+</p>
+
+<h3>Terceros</h3>
+
+<p>
+
+CodesJG no vende la información personal de los usuarios.
+
+</p>
+
+</div>
+
+</section>
+
+<section id="eliminar-cuenta">
+
+<div class="card">
+
+<h2>Eliminar cuenta</h2>
+
+<p>
+
+Si deseas eliminar tu cuenta y los datos asociados,
+puedes solicitarlo escribiendo al siguiente correo:
+
+</p>
+
+<p>
+
+<strong>codesjg1@gmail.com</strong>
+
+</p>
+
+<a class="button"
+href="mailto:codesjg1@gmail.com?subject=Solicitud%20de%20eliminación%20de%20cuenta">
+
+Solicitar eliminación
+
+</a>
+
+<hr>
+
+<p>
+
+Al aprobar la solicitud se eliminarán:
+
+</p>
+
+<ul>
+
+<li>Cuenta del usuario.</li>
+
+<li>Información personal.</li>
+
+<li>Datos del negocio asociados.</li>
+
+<li>Información almacenada en nuestros servidores.</li>
+
+</ul>
+
+</div>
+
+</section>
+<section id="soporte">
+
+<div class="card">
+
+<h2>Soporte técnico</h2>
+
+<p>
+
+Si presentas problemas con cualquiera de nuestras aplicaciones,
+puedes comunicarte directamente con el equipo de CodesJG.
+
+</p>
+
+<h3>Podemos ayudarte con:</h3>
+
+<ul>
+
+<li>Recuperación de cuentas.</li>
+
+<li>Problemas de inicio de sesión.</li>
+
+<li>Errores de sincronización.</li>
+
+<li>Problemas con inventarios y ventas.</li>
+
+<li>Solicitudes de eliminación de cuenta.</li>
+
+<li>Consultas sobre privacidad.</li>
+
+<li>Reporte de errores.</li>
+
+<li>Sugerencias para futuras versiones.</li>
+
+</ul>
+
+<a class="button"
+href="mailto:codesjg1@gmail.com?subject=Soporte%20CodesJG">
+
+Solicitar soporte
+
+</a>
+
+</div>
+
+</section>
+
+<section id="contacto">
+
+<div class="card">
+
+<h2>Contacto</h2>
+
+<p>
+
+<strong>Desarrollador:</strong><br>
+CodesJG
+
+</p>
+
+<p>
+
+<strong>Correo oficial:</strong><br>
+
+<a href="mailto:codesjg1@gmail.com">
+
+codesjg1@gmail.com
+
+</a>
+
+</p>
+
+<p>
+
+Nuestro objetivo es ofrecer aplicaciones empresariales modernas,
+rápidas y fáciles de usar para pequeños, medianos y grandes
+negocios.
+
+</p>
+
+</div>
+
+</section>
 
 <footer>
-  © 2026 CodesJG · Gestor de Mi Negocio
+
+<h3>CodesJG</h3>
+
+<p>
+
+Software para negocios • ERP • Inventarios • Ventas • Reportes
+
+</p>
+
+<br>
+
+<p>
+
+© 2026 CodesJG. Todos los derechos reservados.
+
+</p>
+
 </footer>
 
 </body>
+
 </html>
