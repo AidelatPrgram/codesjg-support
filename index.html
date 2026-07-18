@@ -1,159 +1,462 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Política de Privacidad | Gestor de Mi Negocio</title>
+  <title>Gestor de Mi Negocio | Soporte CodesJG</title>
 
-<style>
+  <style>
+    :root {
+      --primary: #15803d;
+      --primary-dark: #14532d;
+      --primary-light: #dcfce7;
+      --background: #f4f7f5;
+      --surface: #ffffff;
+      --text: #17201a;
+      --muted: #647067;
+      --border: #dbe4dd;
+    }
 
-body{
-font-family:Arial,Helvetica,sans-serif;
-background:#f5f7fb;
-margin:0;
-padding:40px;
-color:#222;
-line-height:1.7;
-}
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-.container{
-max-width:1000px;
-margin:auto;
-background:white;
-padding:45px;
-border-radius:20px;
-box-shadow:0 10px 35px rgba(0,0,0,.08);
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.7;
+    }
 
-h1{
-color:#0B8F45;
-font-size:40px;
-margin-bottom:10px;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(10px);
+    }
 
-h2{
-margin-top:40px;
-color:#0B8F45;
-}
+    .nav {
+      max-width: 1050px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
 
-p{
-font-size:17px;
-}
+    .brand {
+      font-weight: 800;
+      color: var(--primary-dark);
+      text-decoration: none;
+      font-size: 18px;
+    }
 
-ul{
-padding-left:25px;
-}
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 18px;
+      font-size: 14px;
+      font-weight: 600;
+    }
 
-.footer{
-margin-top:50px;
-padding-top:20px;
-border-top:1px solid #ddd;
-color:#666;
-font-size:14px;
-}
+    nav a:hover {
+      color: var(--primary);
+    }
 
-.highlight{
-background:#E9FFF1;
-padding:18px;
-border-left:6px solid #0B8F45;
-border-radius:10px;
-margin:25px 0;
-}
+    main {
+      max-width: 1050px;
+      margin: auto;
+      padding: 35px 22px 70px;
+    }
 
-</style>
+    .hero {
+      padding: 55px 40px;
+      color: white;
+      border-radius: 26px;
+      background:
+        radial-gradient(circle at top right, #4ade80 0, transparent 35%),
+        linear-gradient(135deg, var(--primary-dark), var(--primary));
+      box-shadow: 0 18px 45px rgba(20, 83, 45, 0.18);
+    }
 
+    .hero h1 {
+      margin: 0 0 12px;
+      font-size: clamp(34px, 6vw, 58px);
+      line-height: 1.05;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 0 0 26px;
+      font-size: 18px;
+      color: #e9fff0;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 19px;
+      border-radius: 13px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-light {
+      background: white;
+      color: var(--primary-dark);
+    }
+
+    .button-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.55);
+    }
+
+    section {
+      margin-top: 28px;
+      padding: 34px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 8px 28px rgba(31, 47, 36, 0.05);
+      scroll-margin-top: 90px;
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--primary-dark);
+      font-size: 29px;
+    }
+
+    h3 {
+      margin-top: 30px;
+      color: var(--primary);
+    }
+
+    .notice {
+      padding: 18px;
+      margin: 20px 0;
+      background: var(--primary-light);
+      border-left: 5px solid var(--primary);
+      border-radius: 12px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      padding: 19px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: #fbfdfb;
+    }
+
+    ul, ol {
+      padding-left: 23px;
+    }
+
+    .contact-email {
+      overflow-wrap: anywhere;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    footer {
+      max-width: 1050px;
+      margin: auto;
+      padding: 25px 22px 45px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 680px) {
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav a {
+        margin: 0 14px 0 0;
+      }
+
+      .hero {
+        padding: 38px 23px;
+      }
+
+      section {
+        padding: 25px 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+<header>
+  <div class="nav">
+    <a class="brand" href="#inicio">CodesJG</a>
 
-<h1>Gestor de Mi Negocio</h1>
+    <nav>
+      <a href="#soporte">Soporte</a>
+      <a href="#privacidad">Privacidad</a>
+      <a href="#eliminar-cuenta">Eliminar cuenta</a>
+    </nav>
+  </div>
+</header>
 
-<p><strong>Política de Privacidad</strong></p>
+<main>
 
-<p>Última actualización: Julio de 2026.</p>
+  <div class="hero" id="inicio">
+    <h1>Gestor de Mi Negocio</h1>
 
-<div class="highlight">
+    <p>
+      Aplicación desarrollada por CodesJG para administrar ventas,
+      inventario, clientes, proveedores, gastos, caja y otros procesos
+      importantes de un negocio.
+    </p>
 
-Gestor de Mi Negocio es una aplicación desarrollada por <strong>CodesJG</strong> para ayudar a empresas y negocios a administrar ventas, inventario, gastos, clientes, proveedores y demás procesos comerciales.
+    <div class="buttons">
+      <a class="button button-light" href="#soporte">
+        Contactar soporte
+      </a>
 
-</div>
+      <a class="button button-outline" href="#privacidad">
+        Política de privacidad
+      </a>
+    </div>
+  </div>
 
-<h2>1. Información recopilada</h2>
+  <section id="soporte">
+    <h2>Soporte y contacto</h2>
 
-<p>La aplicación puede almacenar información ingresada por el propio usuario, incluyendo:</p>
+    <p>
+      Para recibir ayuda, reportar un problema o enviar una sugerencia,
+      comunícate con CodesJG.
+    </p>
 
-<ul>
+    <div class="grid">
+      <div class="card">
+        <h3>Soporte técnico</h3>
+        <p>
+          Describe el problema y, cuando sea posible, incluye una captura
+          de pantalla y los pasos que realizaste.
+        </p>
+      </div>
 
-<li>Productos.</li>
+      <div class="card">
+        <h3>Sugerencias</h3>
+        <p>
+          Puedes proponer nuevas funciones o mejoras para futuras versiones
+          de Gestor de Mi Negocio.
+        </p>
+      </div>
+    </div>
 
-<li>Ventas.</li>
+    <div class="notice">
+      Correo:
+      <a
+        class="contact-email"
+        href="mailto:codesjg1@gmail.com?subject=Soporte%20-%20Gestor%20de%20Mi%20Negocio"
+      >
+        CORREO_CODESJG@gmail.com
+      </a>
+    </div>
+  </section>
 
-<li>Compras.</li>
+  <section id="privacidad">
+    <h2>Política de privacidad</h2>
 
-<li>Inventario.</li>
+    <p><strong>Última actualización:</strong> julio de 2026.</p>
 
-<li>Clientes.</li>
+    <p>
+      Esta política explica cómo CodesJG trata los datos utilizados por
+      la aplicación <strong>Gestor de Mi Negocio</strong>.
+    </p>
 
-<li>Proveedores.</li>
+    <h3>1. Datos recopilados</h3>
 
-<li>Reportes financieros.</li>
+    <p>
+      La aplicación puede recopilar información proporcionada directamente
+      por los usuarios, incluyendo:
+    </p>
 
-<li>Configuraciones del negocio.</li>
+    <ul>
+      <li>Nombre.</li>
+      <li>Dirección de correo electrónico.</li>
+      <li>Identificador de usuario.</li>
+      <li>Ciudad o dirección del negocio.</li>
+      <li>Número de teléfono, cuando el usuario decide proporcionarlo.</li>
+      <li>Fotografías seleccionadas para productos, perfil o negocio.</li>
+      <li>Productos, ventas, gastos, clientes, proveedores e inventario.</li>
+      <li>Descripciones, notas y observaciones escritas por el usuario.</li>
+    </ul>
 
-</ul>
+    <h3>2. Finalidad del tratamiento</h3>
 
-<p>No recopilamos información personal distinta de la necesaria para el funcionamiento del sistema.</p>
+    <p>
+      Los datos son utilizados para crear y administrar cuentas, prestar
+      las funciones de la aplicación, sincronizar la información del negocio,
+      generar reportes y ofrecer soporte técnico.
+    </p>
 
-<h2>2. Uso de la información</h2>
+    <h3>3. Almacenamiento y proveedores</h3>
 
-<p>La información es utilizada únicamente para proporcionar las funcionalidades de la aplicación y mejorar la experiencia del usuario.</p>
+    <p>
+      La aplicación puede utilizar servicios de Firebase proporcionados por
+      Google, incluyendo autenticación, base de datos y almacenamiento en la
+      nube. Estos servicios actúan como proveedores tecnológicos necesarios
+      para el funcionamiento de la aplicación.
+    </p>
 
-<h2>3. Almacenamiento</h2>
+    <h3>4. Seguridad</h3>
 
-<p>Los datos pueden almacenarse utilizando servicios seguros proporcionados por Firebase de Google.</p>
+    <p>
+      La información transmitida entre la aplicación y sus servicios se
+      protege mediante conexiones cifradas. CodesJG aplica medidas razonables
+      para limitar accesos no autorizados y proteger los datos.
+    </p>
 
-<p>Los propietarios de los datos son siempre los usuarios o empresas que utilizan la aplicación.</p>
+    <h3>5. Compartición de datos</h3>
 
-<h2>4. Seguridad</h2>
+    <p>
+      CodesJG no vende los datos personales de los usuarios. La información
+      puede ser procesada por proveedores tecnológicos necesarios para prestar
+      el servicio o cuando exista una obligación legal.
+    </p>
 
-<p>Aplicamos medidas razonables para proteger la información almacenada y evitar accesos no autorizados.</p>
+    <h3>6. Conservación y eliminación</h3>
 
-<h2>5. Compartición de datos</h2>
+    <p>
+      Los datos se conservan mientras la cuenta permanezca activa o durante
+      el tiempo necesario para prestar el servicio. El usuario puede solicitar
+      la eliminación de su cuenta y los datos asociados mediante la sección
+      de eliminación de cuenta incluida en esta página.
+    </p>
 
-<p>No vendemos ni compartimos la información de los usuarios con terceros, salvo cuando sea requerido por la ley o sea necesario para el funcionamiento de servicios utilizados por la aplicación.</p>
+    <p>
+      Algunos registros podrían conservarse durante un período adicional
+      cuando sea necesario para cumplir obligaciones legales, resolver
+      disputas o proteger la seguridad del servicio. Cuando no exista una
+      razón legítima de conservación, los datos serán eliminados.
+    </p>
 
-<h2>6. Eliminación de datos</h2>
+    <h3>7. Cambios en esta política</h3>
 
-<p>Los usuarios pueden solicitar la eliminación de su información comunicándose con el desarrollador.</p>
+    <p>
+      Esta política puede actualizarse para reflejar cambios en la aplicación,
+      en los servicios utilizados o en las obligaciones aplicables.
+    </p>
 
-<h2>7. Cambios</h2>
+    <h3>8. Contacto de privacidad</h3>
 
-<p>Esta política podrá actualizarse cuando sea necesario para mejorar el servicio o cumplir nuevas obligaciones legales.</p>
+    <p>
+      Para consultas sobre privacidad:
+      <a
+        class="contact-email"
+        href="mailto:codesjg1@gmail.com?subject=Privacidad%20-%20Gestor%20de%20Mi%20Negocio"
+      >
+        CORREO_CODESJG@gmail.com
+      </a>
+    </p>
+  </section>
 
-<h2>8. Contacto</h2>
+  <section id="eliminar-cuenta">
+    <h2>Eliminar cuenta y datos asociados</h2>
 
-<p>Si tienes preguntas sobre esta política puedes comunicarte con:</p>
+    <p>
+      Los usuarios de <strong>Gestor de Mi Negocio</strong> pueden solicitar
+      la eliminación permanente de su cuenta y de los datos asociados.
+    </p>
 
-<p>
+    <div class="notice">
+      <strong>Cómo solicitar la eliminación:</strong>
 
-<strong>CodesJG</strong><br>
+      <ol>
+        <li>
+          Envía un correo desde la dirección asociada a tu cuenta.
+        </li>
+        <li>
+          Utiliza el asunto:
+          <strong>Eliminar cuenta - Gestor de Mi Negocio</strong>.
+        </li>
+        <li>
+          Indica el correo de la cuenta y el nombre del negocio.
+        </li>
+        <li>
+          CodesJG podrá solicitar una verificación razonable para confirmar
+          que la solicitud proviene del titular de la cuenta.
+        </li>
+      </ol>
 
-Correo electrónico:<br>
+      <a
+        class="button button-light"
+        href="mailto:codesjg1@gmail.com?subject=Eliminar%20cuenta%20-%20Gestor%20de%20Mi%20Negocio"
+      >
+        Solicitar eliminación
+      </a>
+    </div>
 
-<b>jgerardino148@gmail.com</b>
+    <h3>Datos que se eliminarán</h3>
 
-</p>
+    <ul>
+      <li>Cuenta de acceso.</li>
+      <li>Perfil y datos personales asociados.</li>
+      <li>Información del negocio vinculada a la cuenta.</li>
+      <li>Productos, clientes, proveedores, ventas, gastos e inventario.</li>
+      <li>Fotografías y contenido asociado a la cuenta.</li>
+    </ul>
 
-<div class="footer">
+    <h3>Datos que podrían conservarse</h3>
 
-© 2026 CodesJG - Todos los derechos reservados.
+    <p>
+      Algunos datos podrán conservarse únicamente cuando exista una obligación
+      legal, fiscal, de seguridad o de prevención de fraude. Cuando aplique,
+      se conservarán solo durante el período necesario.
+    </p>
 
-</div>
+    <h3>Tiempo de atención</h3>
 
-</div>
+    <p>
+      La solicitud será revisada y procesada en un plazo razonable, normalmente
+      dentro de los 30 días calendario siguientes a la verificación de la
+      identidad del solicitante.
+    </p>
+
+    <p>
+      Contacto:
+      <a
+        class="contact-email"
+        href="mailto:codesjg1@gmail.com?subject=Eliminar%20cuenta%20-%20Gestor%20de%20Mi%20Negocio"
+      >
+        CORREO_CODESJG@gmail.com
+      </a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 CodesJG · Gestor de Mi Negocio
+</footer>
 
 </body>
 </html>
