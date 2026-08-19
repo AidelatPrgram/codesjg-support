@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CodesJG | Soporte Oficial y Soluciones de Software</title>
-<meta name="description" content="Centro oficial de soporte de CodesJG y catálogo de aplicaciones empresariales, ERP y sistemas comerciales.">
+<title>CodesJG | Soporte Oficial y Desarrollo de Software</title>
+<meta name="description" content="Centro oficial de CodesJG. Aplicaciones empresariales, ERP, sistemas a la medida y soporte técnico con tecnología de punta.">
+
+<!-- Google Fonts para un look moderno -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 :root {
-    --primary: #0d8f54;
-    --primary-hover: #0a6d40;
-    --accent: #13b76c;
-    --bg-color: #f4f7fb;
-    --card-bg: #ffffff;
-    --text-color: #222222;
-    --text-muted: #555555;
-    --border-radius: 16px;
+    --bg-dark: #07090e;
+    --card-bg: #0f141f;
+    --card-hover: #161d2d;
+    --neon-green: #00ff66;
+    --neon-glow: rgba(0, 255, 102, 0.35);
+    --text-main: #f3f4f6;
+    --text-muted: #9ca3af;
+    --border-color: rgba(0, 255, 102, 0.2);
 }
 
 *{
@@ -29,63 +32,91 @@ html{
 }
 
 body{
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    background: var(--bg-color);
-    color: var(--text-color);
+    font-family: 'Outfit', sans-serif;
+    background: var(--bg-dark);
+    color: var(--text-main);
     line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Fondo con efecto sutil futurista */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at 15% 20%, rgba(0, 255, 102, 0.06) 0%, transparent 40%),
+                radial-gradient(circle at 85% 80%, rgba(0, 180, 255, 0.04) 0%, transparent 40%);
+    z-index: -1;
+    pointer-events: none;
 }
 
 header{
-    background: linear-gradient(135deg, #0a6d40, #13b76c);
-    padding: 80px 20px;
+    background: linear-gradient(135deg, #050b08 0%, #0d1f14 100%);
+    padding: 100px 20px;
     text-align: center;
     color: white;
-    box-shadow: inset 0 -10px 20px rgba(0,0,0,0.05);
+    position: relative;
+    border-bottom: 2px solid var(--border-color);
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--neon-green), transparent);
+    box-shadow: 0 0 15px var(--neon-green);
 }
 
 .brand{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 16px;
-    margin-bottom: 15px;
+    gap: 18px;
+    margin-bottom: 20px;
 }
 
 .brand img{
-    width: 72px;
-    height: 72px;
+    width: 80px;
+    height: 80px;
     object-fit: contain;
-    border-radius: 18px;
-    background: white;
+    border-radius: 20px;
+    background: #000;
     padding: 8px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 0 25px var(--neon-glow);
 }
 
 header h1{
-    font-size: 52px;
-    font-weight: 800;
+    font-size: 64px;
+    font-weight: 900;
     letter-spacing: -1px;
     margin: 0;
+    background: linear-gradient(90deg, #ffffff, var(--neon-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header p{
     max-width: 750px;
     margin: auto;
-    font-size: 19px;
-    opacity: 0.95;
+    font-size: 20px;
+    color: var(--text-muted);
 }
 
 nav{
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
+    background: rgba(7, 9, 14, 0.85);
+    backdrop-filter: blur(12px);
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 15px 20px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    gap: 25px;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
     z-index: 999;
     flex-wrap: wrap;
 }
@@ -93,29 +124,31 @@ nav{
 .nav-brand{
     display: flex;
     align-items: center;
-    gap: 8px;
-    margin-right: 15px;
-    font-weight: bold;
-    color: var(--primary);
+    gap: 10px;
+    margin-right: 20px;
+    font-weight: 700;
+    color: var(--neon-green);
 }
 
 .nav-brand img{
-    width: 32px;
-    height: 32px;
+    width: 34px;
+    height: 34px;
     object-fit: contain;
     border-radius: 8px;
+    border: 1px solid var(--neon-green);
 }
 
 nav a{
     text-decoration: none;
-    color: var(--primary);
+    color: var(--text-main);
     font-weight: 600;
     font-size: 15px;
-    transition: color 0.2s;
+    transition: color 0.2s, text-shadow 0.2s;
 }
 
 nav a:hover{
-    color: var(--primary-hover);
+    color: var(--neon-green);
+    text-shadow: 0 0 10px var(--neon-green);
 }
 
 section{
@@ -127,36 +160,50 @@ section{
 
 .card{
     background: var(--card-bg);
-    padding: 40px;
-    border-radius: var(--border-radius);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    margin-bottom: 35px;
-    border: 1px solid rgba(0,0,0,0.03);
+    padding: 45px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    margin-bottom: 40px;
+    border: 1px solid rgba(255,255,255,0.05);
+    position: relative;
+    transition: border-color 0.3s;
 }
 
-/* Sección Destacada del Catálogo */
-.catalog-card {
-    background: linear-gradient(135deg, #eef8f2 0%, #d9f7e6 100%);
-    border: 2px dashed var(--accent);
+.card:hover {
+    border-color: rgba(0, 255, 102, 0.3);
+}
+
+/* Sección Catálogo e Invitación a Software */
+.catalog-section {
+    background: linear-gradient(135deg, #0f141f 0%, #081a11 100%);
+    border: 1px solid var(--border-color);
     text-align: center;
+    box-shadow: 0 0 30px rgba(0, 255, 102, 0.1);
 }
 
-.catalog-card h2 {
-    color: var(--primary-hover);
+.catalog-section h2 {
+    color: var(--neon-green);
+    text-shadow: 0 0 15px rgba(0, 255, 102, 0.3);
+}
+
+.software-request-box {
+    margin-top: 35px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 h2{
-    color: var(--primary);
+    color: var(--neon-green);
     margin-bottom: 20px;
-    font-size: 32px;
+    font-size: 34px;
     font-weight: 700;
 }
 
 h3{
     margin-top: 25px;
     margin-bottom: 10px;
-    color: #222;
-    font-size: 20px;
+    color: #fff;
+    font-size: 22px;
 }
 
 ul{
@@ -164,7 +211,7 @@ ul{
 }
 
 li{
-    margin: 6px 0;
+    margin: 8px 0;
     color: var(--text-muted);
 }
 
@@ -176,25 +223,26 @@ li{
 }
 
 .app{
-    background: #fafbfc;
-    border: 1px solid #edf0f5;
+    background: var(--card-hover);
+    border: 1px solid rgba(255,255,255,0.05);
     padding: 30px;
-    border-radius: 14px;
-    border-left: 6px solid var(--accent);
+    border-radius: 16px;
+    border-left: 5px solid var(--neon-green);
     display: flex;
     flex-direction: column;
     height: 100%;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: all 0.3s ease;
 }
 
 .app:hover{
     transform: translateY(-6px);
-    box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+    box-shadow: 0 10px 30px var(--neon-glow);
+    border-color: var(--neon-green);
 }
 
 .app h3{
     margin-top: 0;
-    color: var(--primary);
+    color: #fff;
     font-size: 22px;
 }
 
@@ -209,116 +257,134 @@ li{
     width: max-content;
     padding: 6px 14px;
     border-radius: 999px;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     margin-bottom: 15px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .status-en-uso{
-    background: #d9f7e6;
-    color: #08783f;
+    background: rgba(0, 255, 102, 0.15);
+    color: var(--neon-green);
+    border: 1px solid rgba(0, 255, 102, 0.4);
 }
 
 .status-playstore{
-    background: #e1f5fe;
-    color: #0288d1;
+    background: rgba(0, 180, 255, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(0, 180, 255, 0.4);
 }
 
-.email-box{
-    background: #eef8f2;
-    border-left: 5px solid var(--accent);
-    padding: 20px;
-    border-radius: 10px;
+.email-box, .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
     margin: 20px 0;
 }
 
-.email-box a{
-    color: var(--primary);
+.contact-card {
+    background: var(--card-hover);
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.contact-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--neon-green);
+}
+
+.contact-card a {
+    color: var(--neon-green);
     font-weight: bold;
     text-decoration: none;
     word-break: break-word;
 }
 
-.email-box a:hover{
+.contact-card a:hover {
     text-decoration: underline;
 }
 
+/* Botones Épicos Neon */
 .button{
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
-    padding: 14px 28px;
-    background: var(--accent);
-    color: white;
+    padding: 14px 30px;
+    background: var(--neon-green);
+    color: #000;
     text-decoration: none;
     border-radius: 12px;
     margin-top: 15px;
-    font-weight: bold;
-    transition: background 0.2s, transform 0.1s;
-    box-shadow: 0 4px 15px rgba(19, 183, 108, 0.3);
+    font-weight: 800;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 20px var(--neon-glow);
+    border: none;
+    cursor: pointer;
 }
 
 .button:hover{
-    background: var(--primary);
+    background: #fff;
+    color: #000;
+    box-shadow: 0 0 30px #00ff66;
     transform: translateY(-2px);
 }
 
+.button-whatsapp {
+    background: #25d366;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+}
+
+.button-whatsapp:hover {
+    background: #fff;
+    color: #25d366;
+    box-shadow: 0 0 30px #25d366;
+}
+
 .button-playstore {
-    background: #01875f;
-    box-shadow: 0 4px 15px rgba(1, 135, 95, 0.3);
+    background: #0284c7;
+    color: #fff;
+    box-shadow: 0 0 20px rgba(2, 132, 199, 0.4);
 }
 
 .button-playstore:hover {
-    background: #015c41;
+    background: #fff;
+    color: #0284c7;
+    box-shadow: 0 0 30px #38bdf8;
 }
 
 footer{
-    background: #111;
-    color: white;
+    background: #040609;
+    color: var(--text-muted);
     text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
+    padding: 50px 20px;
+    margin-top: 80px;
+    border-top: 1px solid rgba(255,255,255,0.05);
 }
 
 footer h3{
-    color: white;
+    color: #fff;
     margin-top: 0;
-}
-
-footer p {
-    color: #aaa;
-    font-size: 14px;
+    font-size: 24px;
+    text-shadow: 0 0 10px var(--neon-green);
 }
 
 hr{
     margin: 35px 0;
     border: none;
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid rgba(255,255,255,0.08);
 }
 
 @media(max-width: 700px){
-    header{
-        padding: 60px 16px;
-    }
-    .brand{
-        flex-direction: column;
-        gap: 10px;
-    }
-    header h1{
-        font-size: 36px;
-    }
-    header p{
-        font-size: 16px;
-    }
-    h2{
-        font-size: 26px;
-    }
-    .card{
-        padding: 25px 20px;
-    }
+    header{ padding: 70px 16px; }
+    header h1{ font-size: 38px; }
+    .card{ padding: 25px 20px; }
 }
 </style>
 </head>
@@ -331,7 +397,7 @@ hr{
         <h1>CodesJG</h1>
     </div>
     <p>
-        Desarrollamos soluciones de software para negocios, empresas y comercios, enfocadas en ventas, inventarios, reportes, finanzas y administración empresarial.
+        Desarrollo de software de alta gama, sistemas ERP, aplicaciones móviles y soluciones empresariales con tecnología de vanguardia.
     </p>
 </header>
 
@@ -341,100 +407,115 @@ hr{
         <span>CodesJG</span>
     </div>
     <a href="#inicio">Inicio</a>
-    <a href="#catalogo">Catálogo</a>
+    <a href="#catalogo">Catálogo & Software</a>
     <a href="#apps">Aplicaciones</a>
     <a href="#privacidad">Privacidad</a>
-    <a href="#eliminar-cuenta">Eliminar cuenta</a>
     <a href="#soporte">Soporte</a>
     <a href="#contacto">Contacto</a>
 </nav>
 
 <section>
     <div class="card">
-        <h2>Bienvenido</h2>
+        <h2>Bienvenido al Núcleo CodesJG</h2>
         <p>
-            Este es el sitio oficial de soporte y desarrollo de <strong>CodesJG</strong>. Aquí encontrarás información detallada sobre nuestras aplicaciones en producción, políticas de privacidad, soporte técnico y solicitudes de eliminación de cuentas.
+            Plataforma oficial de desarrollo y soporte técnico. Aquí puedes explorar nuestras aplicaciones activas, consultar los módulos disponibles para tu negocio y gestionar solicitudes directas con nuestro equipo de ingeniería.
         </p>
     </div>
 </section>
 
-<!-- SECCIÓN NUEVA: CATÁLOGO DE MÓDULOS -->
+<!-- SECCIÓN CATÁLOGO + SOLICITUD DE SOFTWARE -->
 <section id="catalogo">
-    <div class="card catalog-card">
-        <h2>📋 Catálogo de Módulos</h2>
+    <div class="card catalog-section">
+        <h2>⚡ Catálogo de Módulos</h2>
         <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 20px auto;">
-            ¿Quieres solicitar un software personalizado para tu negocio? Explora nuestro catálogo completo de módulos disponibles para adaptarnos a tus necesidades exactas.
+            Descarga nuestro documento PDF con la especificación completa de módulos para diseñar y estructurar la aplicación o software ideal para tu empresa.
         </p>
-        <!-- Reemplaza 'catalogo-codesjg.pdf' con la ruta o nombre real de tu archivo PDF -->
-        <a class="button" href="catalogo-codesjg.pdf" target="_blank">
-            📄 Ver Catálogo en PDF
+        <!-- Reemplaza 'catalogo.pdf' si tu archivo se llama diferente -->
+        <a class="button" href="catalogo.pdf" target="_blank">
+            📥 Ver Catálogo en PDF
         </a>
+
+        <!-- BLOQUE DE SOLICITUD DE SOFTWARE NUEVO -->
+        <div class="software-request-box">
+            <h3>🚀 ¿Necesitas un Software a la medida para tu negocio?</h3>
+            <p style="color: var(--text-muted); max-width: 650px; margin: 10px auto 20px auto;">
+                Cuéntanos qué idea o necesidad tiene tu comercio y construimos la solución perfecta para ti. Envíanos un mensaje directo.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a class="button" href="mailto:codesjg1@gmail.com?subject=Solicitud%20de%20Software%20Personalizado%20CodesJG&body=Hola%20CodesJG,%20quiero%20solicitar%20un%20software%20para%20mi%20negocio.%20Detalles:">
+                    ✉️ Enviar Correo de Solicitud
+                </a>
+                <a class="button button-whatsapp" href="https://wa.me/573107120348?text=Hola%20CodesJG,%20estoy%20interesado%20en%20solicitar%20un%20software%20para%20mi%20negocio." target="_blank">
+                    💬 Escribir al WhatsApp
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 
 <section id="apps">
     <div class="card">
-        <h2>Nuestras Aplicaciones</h2>
+        <h2>Ecosistema de Aplicaciones</h2>
         <p>
-            CodesJG desarrolla aplicaciones móviles y sistemas de gestión de alto rendimiento. Nuestras soluciones operan con éxito en comercios, restaurantes y empresas a nivel regional.
+            Soluciones inteligentes operando exitosamente a nivel regional (Colombia y Perú) con un rendimiento óptimo.
         </p>
 
         <div class="apps">
 
-            <!-- Gestor de Mi Negocio (Play Store / Lanzamiento) -->
+            <!-- Gestor de Mi Negocio -->
             <div class="app">
                 <h3>📱 Gestor de Mi Negocio</h3>
                 <span class="status status-playstore">
-                    Disponible en Google Play
+                    Google Play
                 </span>
                 <p>
-                    Lanzada oficialmente el 14/08/2026. Diseñada para pequeños y medianos negocios, ya cuenta con descargas activas en las principales ciudades de Colombia y uso regional en Colombia y Perú.
+                    Lanzada el 14/08/2026. Con descargas activas en las principales ciudades de Colombia y uso regional expandido en Colombia y Perú.
                 </p>
                 <h4>Funciones principales</h4>
                 <ul>
                     <li>Ventas e Inventario</li>
                     <li>Productos y Clientes</li>
                     <li>Proveedores y Gastos</li>
-                    <li>Reportes y Control financiero</li>
+                    <li>Reportes financieros</li>
                 </ul>
                 <a class="button button-playstore" href="https://play.google.com/store/apps/details?id=com.codesjg.gestionminegocio&hl=es_419" target="_blank">
-                    Descargar en Play Store
+                    Descargar App
                 </a>
             </div>
 
-            <!-- ERP Empresarial (En uso) -->
+            <!-- ERP Empresarial -->
             <div class="app">
                 <h3>🏢 ERP Empresarial</h3>
                 <span class="status status-en-uso">
-                    En uso
+                    En Uso
                 </span>
                 <p>
-                    Plataforma ERP empresarial implementada para administrar de forma centralizada múltiples negocios. Permite sincronizar y controlar diferentes establecimientos desde una única interfaz de control.
+                    Plataforma centralizada diseñada para la administración integral de múltiples establecimientos comerciales desde un único lugar.
                 </p>
                 <h4>Funciones principales</h4>
                 <ul>
-                    <li>Gestión multi-negocio</li>
-                    <li>Ventas, Caja y Gastos</li>
-                    <li>Inventario por local y Bodega central</li>
-                    <li>Reportes empresariales y Roles de usuario</li>
+                    <li>Control Multi-negocio</li>
+                    <li>Caja, Ventas y Gastos</li>
+                    <li>Bodega central e Inventarios</li>
+                    <li>Reportes y Permisos por roles</li>
                 </ul>
             </div>
 
-            <!-- NUEVA APP: Helatto -->
+            <!-- Helatto -->
             <div class="app">
                 <h3>🍨 Helatto</h3>
                 <span class="status status-en-uso">
-                    En uso
+                    En Uso
                 </span>
                 <p>
-                    Aplicación especializada desarrollada a la medida para heladerías. Integra de forma fluida todas las dinámicas operativas típicas del local comercial.
+                    Aplicación especializada para heladerías, optimizada para agilizar la atención en mostrador y el control operativo interno.
                 </p>
                 <h4>Funciones principales</h4>
                 <ul>
                     <li>Gestión de mesas</li>
-                    <li>Control de toppings e ingredientes</li>
+                    <li>Control de toppings y adiciones</li>
                     <li>Finanzas y caja diaria</li>
-                    <li>Ventas rápidas y reportes</li>
+                    <li>Ventas optimizadas</li>
                 </ul>
             </div>
 
@@ -442,16 +523,16 @@ hr{
             <div class="app">
                 <h3>🍔 Legendario App</h3>
                 <span class="status status-en-uso">
-                    En uso
+                    En Uso
                 </span>
                 <p>
-                    Aplicación desarrollada para el restaurante <strong>El Legendario</strong>, ubicada en la ciudad de Maicao, La Guajira, optimizando el flujo de atención y control interno.
+                    Sistema a la medida para el restaurante <strong>El Legendario</strong> (Maicao, La Guajira), automatizando comandas, ventas y control de caja.
                 </p>
                 <h4>Funciones principales</h4>
                 <ul>
                     <li>Ventas rápidas</li>
-                    <li>Registro y control de caja</li>
-                    <li>Inventario y Gastos</li>
+                    <li>Control de inventario</li>
+                    <li>Gastos y reportes</li>
                     <li>Panel administrativo</li>
                 </ul>
             </div>
@@ -460,17 +541,17 @@ hr{
             <div class="app">
                 <h3>👕 Ziba Clothes</h3>
                 <span class="status status-en-uso">
-                    En uso
+                    En Uso
                 </span>
                 <p>
-                    Solución digital para tiendas de ropa y comercio minorista en Maicao, La Guajira, facilitando el registro de prendas, existencias y apartados.
+                    Software de gestión enfocado en tiendas de ropa de Maicao, La Guajira, facilitando el control de prendas, stock y sistema de apartados.
                 </p>
                 <h4>Funciones principales</h4>
                 <ul>
-                    <li>Control de inventario de prendas</li>
-                    <li>Gestión de apartados</li>
-                    <li>Clientes y Proveedores</li>
-                    <li>Reportes de ventas</li>
+                    <li>Inventario detallado de prendas</li>
+                    <li>Control de apartados</li>
+                    <li>Clientes y proveedores</li>
+                    <li>Reportes comerciales</li>
                 </ul>
             </div>
 
@@ -480,57 +561,73 @@ hr{
 
 <section id="privacidad">
     <div class="card">
-        <h2>Política de Privacidad</h2>
+        <h2>Política de Privacidad y Datos</h2>
         <p>
-            En CodesJG respetamos la privacidad de nuestros usuarios y trabajamos continuamente para proteger la información registrada en nuestras aplicaciones.
+            En CodesJG resguardamos la integridad y confidencialidad de la información gestionada en todas nuestras plataformas.
         </p>
         <hr>
-        <h3>Información recopilada</h3>
+        <h3>Recopilación y Uso</h3>
         <ul>
-            <li>Nombre del usuario y Correo electrónico.</li>
-            <li>Número telefónico (cuando sea proporcionado).</li>
-            <li>Información comercial y registros del negocio creados por el usuario.</li>
-            <li>Datos operativos como productos, ventas, gastos e inventarios.</li>
+            <li>Datos de perfil de usuario y credenciales de acceso.</li>
+            <li>Información de inventarios, ventas y registros comerciales del negocio.</li>
+            <li>Sincronización segura en tiempo real mediante infraestructura de Google Firebase.</li>
         </ul>
-        <h3>Uso de la información</h3>
-        <ul>
-            <li>Permitir el acceso seguro a la cuenta.</li>
-            <li>Sincronizar la información en tiempo real entre dispositivos.</li>
-            <li>Generación de reportes y estadísticas operativas.</li>
-            <li>Soporte técnico y optimización del servicio.</li>
-        </ul>
-        <h3>Seguridad y Terceros</h3>
-        <p>
-            La información se almacena de forma segura utilizando servicios certificados como Google Firebase. CodesJG no vende ni comercializa bajo ninguna circunstancia la información personal de los usuarios.
+        <p style="margin-top: 15px;">
+            CodesJG no comercializa datos personales ni corporativos bajo ninguna circunstancia. Para solicitar la eliminación total de tus registros y datos asociados, puedes escribir directamente a <a href="mailto:codesjg1@gmail.com" style="color:var(--neon-green)">codesjg1@gmail.com</a> con el asunto <em>"Solicitud de eliminación de cuenta"</em>.
         </p>
-    </div>
-</section>
-
-<section id="eliminar-cuenta">
-    <div class="card">
-        <h2>Eliminar Cuenta</h2>
-        <p>
-            Para solicitar la eliminación de tu cuenta y de los datos asociados, debes escribir directamente a nuestro correo oficial de soporte.
-        </p>
-        <div class="email-box">
-            <p>
-                <strong>Correo para solicitudes de eliminación:</strong><br>
-                <a href="mailto:codesjg1@gmail.com">codesjg1@gmail.com</a>
-            </p>
-        </div>
-        <p>En el mensaje debes indicar el correo de tu cuenta y usar como asunto: <strong>Solicitud de eliminación de cuenta</strong>.</p>
-        <hr>
-        <p>Tras verificar la titularidad, se procederá a eliminar permanentemente:</p>
-        <ul>
-            <li>Cuenta de usuario y datos personales.</li>
-            <li>Información y registros del negocio vinculados.</li>
-            <li>Datos almacenados en nuestros servidores.</li>
-        </ul>
     </div>
 </section>
 
 <section id="soporte">
     <div class="card">
-        <h2>Soporte Técnico</h2>
+        <h2>Soporte Técnico Especializado</h2>
         <p>
-            Si presentas inconvenientes o dudas con cualquiera de nuestras aplicaciones, el equipo de CodesJG est
+            ¿Experimentas problemas técnicos o requieres asistencia personalizada con nuestros sistemas? El equipo de CodesJG está listo para ayudarte.
+        </p>
+        <ul>
+            <li>Recuperación de accesos y cuentas.</li>
+            <li>Sincronización de datos e inventarios.</li>
+            <li>Reporte de errores o fallas operativas.</li>
+            <li>Peticiones de nuevas características o módulos.</li>
+        </ul>
+        <div style="margin-top: 20px;">
+            <a class="button" href="mailto:codesjg1@gmail.com?subject=Soporte%20Técnico%20CodesJG">
+                🛠️ Contactar Soporte
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN DE CONTACTO RESTAURADA Y MEJORADA -->
+<section id="contacto">
+    <div class="card">
+        <h2>Canales de Contacto Oficiales</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">
+            Comunícate directamente con nosotros a través de nuestros canales oficiales de atención empresarial y desarrollo.
+        </p>
+        
+        <div class="contact-grid">
+            <div class="contact-card">
+                <h3>📧 Correo Electrónico</h3>
+                <p style="margin: 10px 0;">Para contratos, soporte y cotizaciones:</p>
+                <a href="mailto:codesjg1@gmail.com">codesjg1@gmail.com</a>
+            </div>
+
+            <div class="contact-card">
+                <h3>💬 WhatsApp Oficial</h3>
+                <p style="margin: 10px 0;">Atención directa y rápida:</p>
+                <a href="https://wa.me/573107120348?text=Hola%20CodesJG,%20quiero%20más%20información%20sobre%20sus%20servicios." target="_blank">+57 310 7120348</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <h3>CodesJG</h3>
+    <p>Software Empresarial Avanzado • ERP • Apps Móviles • Soluciones a la medida</p>
+    <br>
+    <p>© 2026 CodesJG. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
