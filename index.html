@@ -276,6 +276,12 @@ li{
     border: 1px solid rgba(0, 180, 255, 0.4);
 }
 
+.status-desarrollo{
+    background: rgba(250, 204, 21, 0.15);
+    color: #facc15;
+    border: 1px solid rgba(250, 204, 21, 0.4);
+}
+
 .email-box, .contact-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -430,12 +436,12 @@ hr{
         <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 20px auto;">
             Descarga nuestro documento PDF con la especificación completa de módulos para diseñar y estructurar la aplicación o software ideal para tu empresa.
         </p>
-        <!-- Reemplaza 'catalogo.pdf' si tu archivo se llama diferente -->
+        <!-- Enlace a tu PDF -->
         <a class="button" href="catalogo.pdf" target="_blank">
             📥 Ver Catálogo en PDF
         </a>
 
-        <!-- BLOQUE DE SOLICITUD DE SOFTWARE NUEVO -->
+        <!-- BLOQUE DE SOLICITUD DE SOFTWARE -->
         <div class="software-request-box">
             <h3>🚀 ¿Necesitas un Software a la medida para tu negocio?</h3>
             <p style="color: var(--text-muted); max-width: 650px; margin: 10px auto 20px auto;">
@@ -461,6 +467,24 @@ hr{
         </p>
 
         <div class="apps">
+
+            <!-- NUEVA APP: Farmacia de la Costa -->
+            <div class="app">
+                <h3>💊 Farmacia de la Costa</h3>
+                <span class="status status-desarrollo">
+                    En Desarrollo
+                </span>
+                <p>
+                    Sistema especializado en desarrollo para la administración inteligente de farmacias, enfocado en el control estricto de productos y normativas del sector salud.
+                </p>
+                <h4>Funciones principales</h4>
+                <ul>
+                    <li>Ventas y control de caja</li>
+                    <li>Control avanzado de vencimientos</li>
+                    <li>Gestión de laboratorios y proveedores</li>
+                    <li>Finanzas y reportes especializados</li>
+                </ul>
+            </div>
 
             <!-- Gestor de Mi Negocio -->
             <div class="app">
@@ -598,7 +622,6 @@ hr{
     </div>
 </section>
 
-<!-- SECCIÓN DE CONTACTO RESTAURADA Y MEJORADA -->
 <section id="contacto">
     <div class="card">
         <h2>Canales de Contacto Oficiales</h2>
