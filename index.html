@@ -3,21 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>CodesJG | Desarrollo de Software, Apps y Páginas Web</title>
+<meta name="description" content="CodesJG desarrolla software empresarial, aplicaciones móviles, páginas web para negocios y soluciones digitales a la medida.">
 
-<meta
-    name="description"
-    content="CodesJG desarrolla software empresarial, aplicaciones móviles, páginas web para negocios y soluciones digitales a la medida."
->
+<!-- Google Fonts para un look moderno -->
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&display=swap"
-    rel="stylesheet"
->
+
 
 <style>
-
 :root{
     --bg:#f7f9fb;
     --surface:#ffffff;
@@ -34,32 +28,15 @@
     --shadow-sm:0 10px 30px rgba(20,40,30,.07);
 }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 
 body{
     font-family:'Outfit',sans-serif;
-
     background:
-        radial-gradient(
-            circle at 15% 0%,
-            rgba(24,166,106,.09),
-            transparent 28%
-        ),
-        radial-gradient(
-            circle at 90% 10%,
-            rgba(217,169,28,.08),
-            transparent 22%
-        ),
-        var(--bg);
-
+      radial-gradient(circle at 15% 0%, rgba(24,166,106,.09), transparent 28%),
+      radial-gradient(circle at 90% 10%, rgba(217,169,28,.08), transparent 22%),
+      var(--bg);
     color:var(--ink);
     line-height:1.6;
     overflow-x:hidden;
@@ -69,27 +46,13 @@ body::before{
     content:"";
     position:fixed;
     inset:0;
-
     background-image:
-        linear-gradient(
-            rgba(16,32,25,.025) 1px,
-            transparent 1px
-        ),
-        linear-gradient(
-            90deg,
-            rgba(16,32,25,.025) 1px,
-            transparent 1px
-        );
-
+      linear-gradient(rgba(16,32,25,.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(16,32,25,.025) 1px, transparent 1px);
     background-size:32px 32px;
-
     pointer-events:none;
     z-index:-1;
 }
-
-/* ==============================
-   HERO
-============================== */
 
 header{
     min-height:84vh;
@@ -102,70 +65,51 @@ header{
 
 .hero-shell{
     width:min(1180px,100%);
-
     display:grid;
-
-    grid-template-columns:
-        1.15fr .85fr;
-
+    grid-template-columns:1.15fr .85fr;
     gap:48px;
     align-items:center;
 }
 
 .hero-copy{
     text-align:left;
+    align-self:center;
+    padding-right:10px;
 }
 
 .brand{
     display:inline-flex;
     align-items:center;
-    gap:12px;
-
-    margin-bottom:28px;
-
-    padding:8px 12px;
-
-    border-radius:999px;
-
-    background:
-        rgba(255,255,255,.8);
-
-    border:
-        1px solid var(--line);
-
-    box-shadow:
-        var(--shadow-sm);
+    gap:16px;
+    margin-bottom:34px;
+    padding:12px 18px;
+    border-radius:24px;
+    background:rgba(255,255,255,.94);
+    border:1px solid var(--line);
+    box-shadow:var(--shadow-sm);
 }
 
 .brand img{
-    width:40px;
-    height:40px;
-
-    border-radius:10px;
-
+    width:72px;
+    height:72px;
+    border-radius:16px;
     object-fit:contain;
-
     background:#fff;
-
-    padding:4px;
+    padding:5px;
 }
 
 .brand h1{
-    font-size:20px;
+    font-size:30px;
     font-weight:800;
     color:var(--ink);
+    letter-spacing:-.6px;
 }
 
 .hero-copy h2{
-    font-size:
-        clamp(48px,7vw,82px);
-
+    font-size:clamp(48px,7vw,82px);
     line-height:.98;
-
     letter-spacing:-3px;
-
-    max-width:820px;
-
+    max-width:720px;
     margin-bottom:24px;
 }
 
@@ -174,58 +118,36 @@ header{
 }
 
 .hero-copy p{
-    max-width:720px;
-
+    max-width:650px;
     color:var(--muted);
-
     font-size:20px;
 }
 
 .hero-actions{
     display:flex;
-
     gap:14px;
-
     flex-wrap:wrap;
-
     margin-top:30px;
-
     justify-content:flex-start;
 }
 
 .hero-badges{
     display:flex;
-
     flex-wrap:wrap;
-
     gap:10px;
-
     margin-top:28px;
-
     justify-content:flex-start;
 }
 
 .hero-badge{
     padding:8px 13px;
-
     border-radius:999px;
-
     background:#fff;
-
-    border:
-        1px solid var(--line);
-
+    border:1px solid var(--line);
     color:#344039;
-
     font-size:13px;
-
-    box-shadow:
-        0 5px 16px rgba(20,40,30,.04);
+    box-shadow:0 5px 16px rgba(20,40,30,.04);
 }
-
-/* ==============================
-   HERO VISUAL
-============================== */
 
 .hero-visual{
     position:relative;
@@ -234,113 +156,62 @@ header{
 
 .visual-card{
     position:absolute;
-
-    background:
-        rgba(255,255,255,.92);
-
-    backdrop-filter:
-        blur(16px);
-
-    border:
-        1px solid rgba(255,255,255,.9);
-
-    box-shadow:
-        var(--shadow);
-
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(16px);
+    border:1px solid rgba(255,255,255,.9);
+    box-shadow:var(--shadow);
     border-radius:28px;
 }
 
 .visual-main{
-    inset:
-        30px 0 40px 35px;
-
+    inset:30px 0 40px 35px;
     padding:30px;
-
     overflow:hidden;
-
     background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.96),
-            rgba(236,247,241,.96)
-        );
+      linear-gradient(145deg, rgba(255,255,255,.96), rgba(236,247,241,.96));
 }
 
 .visual-main::after{
     content:"";
-
     position:absolute;
-
-    width:260px;
-    height:260px;
-
+    width:260px;height:260px;
     border-radius:50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            rgba(24,166,106,.18),
-            rgba(217,169,28,.12)
-        );
-
-    right:-100px;
-    top:-90px;
+    background:linear-gradient(135deg,rgba(24,166,106,.18),rgba(217,169,28,.12));
+    right:-100px;top:-90px;
 }
 
 .visual-top{
     display:flex;
-
     align-items:center;
-
-    justify-content:
-        space-between;
-
+    justify-content:space-between;
     margin-bottom:30px;
 }
 
 .visual-logo{
-    width:58px;
-    height:58px;
-
+    width:58px;height:58px;
     border-radius:16px;
-
     background:var(--dark);
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     color:#fff;
-
     font-weight:800;
-
     font-size:20px;
 }
 
 .visual-status{
     font-size:12px;
-
     color:var(--primary);
-
-    background:
-        var(--soft-green);
-
+    background:var(--soft-green);
     padding:7px 10px;
-
     border-radius:999px;
-
     font-weight:700;
 }
 
 .visual-main h3{
     font-size:32px;
-
     line-height:1.05;
-
-    margin:
-        0 0 12px;
+    margin:0 0 12px;
 }
 
 .visual-main p{
@@ -349,1868 +220,858 @@ header{
 
 .visual-grid{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     gap:14px;
-
     margin-top:26px;
 }
 
 .mini-tile{
     padding:18px;
-
     border-radius:18px;
-
     background:#fff;
-
-    border:
-        1px solid var(--line);
+    border:1px solid var(--line);
 }
 
 .mini-tile strong{
     display:block;
-
     font-size:24px;
-
     color:var(--primary);
 }
 
 .float-card{
     padding:18px 20px;
-
     width:210px;
-
     z-index:2;
 }
 
-.float-one{
-    left:-28px;
-    bottom:20px;
-}
-
-.float-two{
-    right:-25px;
-    top:0;
-}
+.float-one{left:-28px;bottom:20px}
+.float-two{right:-10px;top:18px}
 
 .float-card strong{
     display:block;
-
     color:var(--ink);
-
     font-size:17px;
 }
 
 .float-card span{
     font-size:13px;
-
     color:var(--muted);
 }
 
-/* ==============================
-   NAVEGACIÓN
-============================== */
-
 nav{
     position:sticky;
-
     top:14px;
-
     z-index:999;
-
-    width:
-        min(1040px,calc(100% - 32px));
-
+    width:min(1040px,calc(100% - 32px));
     margin:0 auto;
-
-    background:
-        rgba(255,255,255,.88);
-
-    backdrop-filter:
-        blur(18px);
-
-    border:
-        1px solid rgba(255,255,255,.95);
-
-    box-shadow:
-        0 12px 40px rgba(20,40,30,.10);
-
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.95);
+    box-shadow:0 12px 40px rgba(20,40,30,.10);
     border-radius:18px;
-
     padding:12px 16px;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     gap:18px;
-
     flex-wrap:wrap;
 }
 
 .nav-brand{
     display:flex;
-
     align-items:center;
-
     gap:8px;
-
     margin-right:auto;
-
     font-weight:800;
-
     color:var(--ink);
 }
 
 .nav-brand img{
-    width:32px;
-    height:32px;
-
-    border-radius:8px;
-
-    object-fit:contain;
+    width:32px;height:32px;border-radius:8px;object-fit:contain;
 }
 
 nav a{
     text-decoration:none;
-
     color:#405047;
-
     font-size:14px;
-
     font-weight:600;
-
     padding:8px 10px;
-
     border-radius:10px;
-
     transition:.2s;
 }
 
-nav a:hover,
-nav a.active{
-    background:
-        var(--soft-green);
-
-    color:
-        var(--primary);
+nav a:hover, nav a.active{
+    background:var(--soft-green);
+    color:var(--primary);
 }
-
-/* ==============================
-   SECCIONES
-============================== */
 
 section{
     max-width:1180px;
-
     margin:auto;
-
     padding:64px 20px;
-
     scroll-margin-top:100px;
 }
 
 .card{
-    background:
-        rgba(255,255,255,.9);
-
-    border:
-        1px solid rgba(255,255,255,.95);
-
+    background:rgba(255,255,255,.9);
+    border:1px solid rgba(255,255,255,.95);
     border-radius:30px;
-
     padding:46px;
-
-    box-shadow:
-        var(--shadow-sm);
-
+    box-shadow:var(--shadow-sm);
     margin-bottom:26px;
 }
 
 h2{
     color:var(--ink);
-
-    font-size:
-        clamp(34px,5vw,54px);
-
+    font-size:clamp(34px,5vw,54px);
     line-height:1.05;
-
     letter-spacing:-1.5px;
-
     margin-bottom:18px;
 }
 
-h3{
-    color:var(--ink);
+h3{color:var(--ink);font-size:22px;margin:18px 0 10px}
+h4{color:var(--ink)}
+p,li{color:var(--muted)}
+ul{padding-left:20px}
+li{margin:7px 0}
 
-    font-size:22px;
-
-    margin:
-        18px 0 10px;
-}
-
-h4{
-    color:var(--ink);
-}
-
-p,
-li{
-    color:var(--muted);
-}
-
-ul{
-    padding-left:20px;
-}
-
-li{
-    margin:7px 0;
-}
-
-.section-title{
-    text-align:left;
-}
-
+.section-title{text-align:left}
 .section-subtitle{
     text-align:left;
-
-    margin:
-        0 0 32px;
-
+    margin:0 0 32px;
     max-width:760px;
-
     color:var(--muted);
-
     font-size:18px;
 }
 
-/* ==============================
-   BOTONES
-============================== */
-
 .button{
     display:inline-flex;
-
     align-items:center;
-
     justify-content:center;
-
     padding:13px 22px;
-
     border-radius:12px;
-
     text-decoration:none;
-
     font-weight:700;
-
     font-size:15px;
-
     background:var(--ink);
-
     color:#fff;
-
-    border:
-        1px solid var(--ink);
-
+    border:1px solid var(--ink);
     transition:.2s ease;
-
     margin-top:12px;
 }
 
 .button:hover{
-    transform:
-        translateY(-2px);
-
-    box-shadow:
-        0 10px 24px rgba(12,23,18,.16);
+    transform:translateY(-2px);
+    box-shadow:0 10px 24px rgba(12,23,18,.16);
 }
 
 .button-whatsapp{
     background:var(--primary);
-
     border-color:var(--primary);
 }
 
 .button-playstore{
     background:#225d91;
-
     border-color:#225d91;
 }
 
-/* ==============================
-   MÉTRICAS
-============================== */
+.button-outline{
+    background:#fff;
+    color:var(--ink);
+    border-color:var(--line);
+}
+
+.button-outline:hover{
+    background:var(--soft-green);
+    color:var(--primary);
+    border-color:#c6ded1;
+}
 
 .metric-strip{
     display:grid;
-
-    grid-template-columns:
-        repeat(4,1fr);
-
+    grid-template-columns:repeat(4,1fr);
     gap:16px;
-
     margin-top:28px;
 }
 
 .metric{
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #f0f6f3
-        );
-
-    border:
-        1px solid var(--line);
-
+    background:linear-gradient(145deg,#fff,#f0f6f3);
+    border:1px solid var(--line);
     border-radius:20px;
-
     padding:22px;
 }
 
 .metric strong{
     display:block;
-
     color:var(--primary);
-
     font-size:26px;
-
     margin-bottom:4px;
 }
 
-/* ==============================
-   SERVICIOS
-============================== */
-
 .services{
     display:grid;
-
-    grid-template-columns:
-        repeat(12,1fr);
-
+    grid-template-columns:repeat(12,1fr);
     gap:18px;
-
     margin-top:30px;
 }
 
 .service-card{
     background:#fff;
-
-    border:
-        1px solid var(--line);
-
+    border:1px solid var(--line);
     border-radius:24px;
-
     padding:30px;
-
     min-height:230px;
-
     transition:.3s ease;
-
     position:relative;
-
     overflow:hidden;
 }
 
 .service-card:nth-child(1),
-.service-card:nth-child(4){
-    grid-column:span 7;
-}
+.service-card:nth-child(4){grid-column:span 7}
 
 .service-card:nth-child(2),
-.service-card:nth-child(3){
-    grid-column:span 5;
-}
+.service-card:nth-child(3){grid-column:span 5}
 
 .service-card:hover{
-    transform:
-        translateY(-6px);
-
-    box-shadow:
-        var(--shadow);
+    transform:translateY(-6px);
+    box-shadow:var(--shadow);
 }
 
 .service-card::after{
     content:"";
-
     position:absolute;
-
-    width:120px;
-
-    height:120px;
-
+    width:120px;height:120px;
     border-radius:50%;
-
-    right:-45px;
-
-    bottom:-55px;
-
-    background:
-        rgba(24,166,106,.06);
+    right:-45px;bottom:-55px;
+    background:rgba(24,166,106,.06);
 }
 
 .service-icon{
-    width:52px;
-
-    height:52px;
-
+    width:52px;height:52px;
     display:flex;
-
     align-items:center;
-
     justify-content:center;
-
     border-radius:16px;
-
-    background:
-        var(--soft-green);
-
+    background:var(--soft-green);
     font-size:25px;
-
     margin-bottom:18px;
 }
 
-/* ==============================
-   CATÁLOGO
-============================== */
-
 .catalog-section{
     text-align:left;
-
     background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,.95),
-            rgba(232,245,238,.95)
-        );
-
+      linear-gradient(135deg,rgba(255,255,255,.95),rgba(232,245,238,.95));
     position:relative;
-
     overflow:hidden;
 }
 
 .catalog-section::before{
     content:"CATÁLOGO";
-
     position:absolute;
-
     right:28px;
-
     top:15px;
-
     font-size:74px;
-
     font-weight:900;
-
-    color:
-        rgba(11,122,75,.045);
-
+    color:rgba(11,122,75,.045);
     letter-spacing:3px;
 }
 
 .software-request-box{
     margin-top:34px;
-
     padding-top:30px;
-
-    border-top:
-        1px solid var(--line);
+    border-top:1px solid var(--line);
 }
-
-/* ==============================
-   APPS
-============================== */
 
 .apps{
     display:grid;
-
-    grid-template-columns:
-        repeat(12,1fr);
-
+    grid-template-columns:repeat(12,1fr);
     gap:18px;
-
     margin-top:28px;
 }
 
 .app{
     grid-column:span 6;
-
     background:#fff;
-
-    border:
-        1px solid var(--line);
-
+    border:1px solid var(--line);
     border-radius:24px;
-
     padding:30px;
-
     min-height:100%;
-
     transition:.3s ease;
 }
 
 .app:first-child{
     grid-column:span 12;
-
-    background:
-        linear-gradient(
-            135deg,
-            #102019,
-            #173b2b
-        );
-
+    background:linear-gradient(135deg,#102019,#173b2b);
     color:#fff;
-
     position:relative;
-
     overflow:hidden;
 }
 
 .app:first-child::after{
     content:"☀";
-
     position:absolute;
-
     right:30px;
-
     bottom:-45px;
-
     font-size:180px;
-
-    color:
-        rgba(255,255,255,.055);
+    color:rgba(255,255,255,.055);
 }
 
 .app:first-child h3,
-.app:first-child h4{
-    color:#fff;
-}
-
+.app:first-child h4{color:#fff}
 .app:first-child p,
-.app:first-child li{
-    color:#c7d7cf;
-}
+.app:first-child li{color:#c7d7cf}
 
 .app:hover{
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        var(--shadow);
+    transform:translateY(-5px);
+    box-shadow:var(--shadow);
 }
 
 .app-top{
     display:flex;
-
     align-items:flex-start;
-
-    justify-content:
-        space-between;
-
+    justify-content:space-between;
     gap:14px;
-
     flex-wrap:wrap;
 }
 
-.app h3{
-    margin-top:0;
-}
+.app h3{margin-top:0}
 
 .status{
     display:inline-block;
-
     width:max-content;
-
     padding:6px 11px;
-
     border-radius:999px;
-
     font-size:11px;
-
     font-weight:700;
-
     margin-bottom:14px;
-
     text-transform:uppercase;
-
     letter-spacing:.6px;
 }
 
-.status-en-uso{
-    background:#e6f4eb;
-    color:#27613f;
-}
-
-.status-playstore{
-    background:#e8f0f8;
-    color:#2b5c84;
-}
-
-.status-desarrollo{
-    background:#f8f0d9;
-    color:#806114;
-}
-
-/* ==============================
-   CONTACTO
-============================== */
+.status-en-uso{background:#e6f4eb;color:#27613f}
+.status-playstore{background:#e8f0f8;color:#2b5c84}
+.status-desarrollo{background:#f8f0d9;color:#806114}
 
 .contact-grid{
     display:grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
     gap:18px;
-
     margin-top:22px;
 }
 
 .contact-card{
-    background:
-        linear-gradient(
-            145deg,
-            #fff,
-            #f0f5f2
-        );
-
-    border:
-        1px solid var(--line);
-
+    background:linear-gradient(145deg,#fff,#f0f5f2);
+    border:1px solid var(--line);
     border-radius:22px;
-
     padding:30px;
-
     text-align:left;
 }
 
 .contact-card a{
     color:var(--primary);
-
     font-weight:700;
-
     text-decoration:none;
 }
 
-/* ==============================
-   CTA
-============================== */
-
 .cta-card{
     text-align:center;
-
     background:
-        linear-gradient(
-            135deg,
-            #102019,
-            #173b2b
-        );
-
+      linear-gradient(135deg,#102019,#173b2b);
     color:#fff;
 }
 
-.cta-card h2{
-    color:#fff;
-}
-
-.cta-card p{
-    color:#c7d7cf !important;
-}
-
-.cta-card .hero-actions{
-    justify-content:center;
-}
+.cta-card h2{color:#fff}
+.cta-card p{color:#c7d7cf!important}
+.cta-card .hero-actions{justify-content:center}
 
 hr{
     border:none;
-
-    border-top:
-        1px solid var(--line);
-
+    border-top:1px solid var(--line);
     margin:30px 0;
 }
 
-/* ==============================
-   FOOTER
-============================== */
-
 footer{
     margin-top:70px;
-
     padding:54px 20px;
-
     text-align:center;
-
     background:#0d1712;
-
     color:#c0cbc4;
 }
 
-footer h3{
-    color:#fff;
-
-    margin-top:0;
-}
-
-footer p{
-    color:#aebbb3;
-}
-
-/* ==============================
-   ANIMACIONES
-============================== */
+footer h3{color:#fff;margin-top:0}
+footer p{color:#aebbb3}
 
 .reveal{
     opacity:0;
-
-    transform:
-        translateY(24px);
-
-    transition:
-        opacity .65s ease,
-        transform .65s ease;
+    transform:translateY(24px);
+    transition:opacity .65s ease,transform .65s ease;
 }
-
-.reveal.visible{
-    opacity:1;
-
-    transform:none;
-}
-
-/* ==============================
-   RESPONSIVE
-============================== */
+.reveal.visible{opacity:1;transform:none}
 
 @media(max-width:900px){
-
-    .hero-shell{
-        grid-template-columns:1fr;
-    }
-
-    .hero-visual{
-        min-height:430px;
-    }
-
-    .metric-strip{
-        grid-template-columns:
-            1fr 1fr;
-    }
-
+    .hero-shell{grid-template-columns:1fr}
+    .hero-visual{min-height:430px}
+    .metric-strip{grid-template-columns:1fr 1fr}
     .service-card,
     .service-card:nth-child(n),
     .app,
-    .app:first-child{
-        grid-column:span 12;
-    }
+    .app:first-child{grid-column:span 12}
 }
 
 @media(max-width:650px){
-
-    header{
-        padding-top:70px;
-    }
-
-    .hero-copy h2{
-        font-size:48px;
-
-        letter-spacing:-2px;
-    }
-
-    .hero-copy p{
-        font-size:17px;
-    }
-
-    .hero-visual{
-        min-height:380px;
-    }
-
-    .visual-main{
-        inset:
-            20px 5px 25px 5px;
-
-        padding:22px;
-    }
-
-    .float-card{
-        display:none;
-    }
-
-    .visual-grid{
-        grid-template-columns:
-            1fr 1fr;
-    }
-
-    nav{
-        top:8px;
-
-        gap:8px;
-    }
-
-    .nav-brand{
-        width:100%;
-
-        justify-content:center;
-
-        margin:0;
-    }
-
-    nav a{
-        font-size:13px;
-
-        padding:6px 7px;
-    }
-
-    .card{
-        padding:28px 20px;
-
-        border-radius:22px;
-    }
-
-    .metric-strip{
-        grid-template-columns:1fr;
-    }
-
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .hero-actions .button{
-        width:100%;
-    }
+    header{padding-top:70px}
+    .brand img{width:58px;height:58px}
+    .brand h1{font-size:25px}
+    .hero-copy h2{font-size:46px;letter-spacing:-2px}
+    .hero-copy p{font-size:17px}
+    .hero-visual{min-height:380px}
+    .visual-main{inset:20px 5px 25px 5px;padding:22px}
+    .float-card{display:none}
+    .visual-grid{grid-template-columns:1fr 1fr}
+    nav{top:8px;gap:8px}
+    .nav-brand{width:100%;justify-content:center;margin:0}
+    nav a{font-size:13px;padding:6px 7px}
+    .card{padding:28px 20px;border-radius:22px}
+    .metric-strip{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .hero-actions .button{width:100%}
 }
-
 </style>
+
+
 </head>
 
 <body>
 
+
 <header id="inicio">
-
     <div class="hero-shell">
-
         <div class="hero-copy">
-
             <div class="brand">
-
-                <img
-                    src="logo.png"
-                    alt="Logo de CodesJG"
-                >
-
+                <img src="logo.png" alt="Logo de CodesJG">
                 <h1>CodesJG</h1>
-
             </div>
 
-            <h2>
-                Construimos tecnología que
-                <span>mueve negocios.</span>
-            </h2>
+            <h2>Construimos tecnología que <span>mueve negocios.</span></h2>
 
             <p>
-                Software, aplicaciones móviles,
-                páginas web y soluciones digitales
-                diseñadas para transformar operaciones,
-                mejorar procesos y hacer crecer empresas.
+                Software, aplicaciones móviles, páginas web y soluciones digitales diseñadas para transformar operaciones, mejorar procesos y hacer crecer empresas.
             </p>
 
             <div class="hero-actions">
-
-                <a
-                    class="button button-whatsapp"
-                    href="https://wa.me/573107120348?text=Hola%20CodesJG,%20quiero%20cotizar%20una%20solución%20digital%20para%20mi%20negocio."
-                    target="_blank"
-                >
+                <a class="button button-whatsapp"
+                   href="https://wa.me/573107120348?text=Hola%20CodesJG,%20quiero%20cotizar%20una%20solución%20digital%20para%20mi%20negocio."
+                   target="_blank"
+                   rel="noopener">
                     Solicitar cotización
                 </a>
 
-                <a
-                    class="button"
-                    href="#apps"
-                >
-                    Ver proyectos
+                <a class="button"
+                   href="mailto:codesjg1@gmail.com?subject=Cotización%20CodesJG&body=Hola%20CodesJG,%20quiero%20recibir%20información%20sobre%20sus%20servicios.">
+                    Escríbenos por correo
                 </a>
 
+                <a class="button button-outline" href="#apps">
+                    Ver proyectos
+                </a>
             </div>
 
             <div class="hero-badges">
-
-                <span class="hero-badge">
-                    Software empresarial
-                </span>
-
-                <span class="hero-badge">
-                    Aplicaciones móviles
-                </span>
-
-                <span class="hero-badge">
-                    Páginas web
-                </span>
-
-                <span class="hero-badge">
-                    Soluciones a la medida
-                </span>
-
+                <span class="hero-badge">Software empresarial</span>
+                <span class="hero-badge">Aplicaciones móviles</span>
+                <span class="hero-badge">Páginas web</span>
+                <span class="hero-badge">Soluciones a la medida</span>
             </div>
-
         </div>
 
         <div class="hero-visual">
-
             <div class="visual-card visual-main">
-
                 <div class="visual-top">
-
-                    <div class="visual-logo">
-                        JG
-                    </div>
-
-                    <span class="visual-status">
-                        Tecnología aplicada
-                    </span>
-
+                    <div class="visual-logo">JG</div>
+                    <span class="visual-status">Soluciones empresariales</span>
                 </div>
 
-                <h3>
-                    Ideas convertidas en
-                    soluciones reales.
-                </h3>
-
-                <p>
-                    Diseñamos productos digitales
-                    pensados para operar, vender,
-                    medir y crecer.
-                </p>
+                <h3>Tecnología pensada para resultados reales.</h3>
+                <p>Diseñamos software, apps y experiencias digitales para operar mejor, vender más y crecer.</p>
 
                 <div class="visual-grid">
-
                     <div class="mini-tile">
                         <strong>Apps</strong>
                         <span>Productos móviles</span>
                     </div>
-
                     <div class="mini-tile">
                         <strong>Web</strong>
                         <span>Presencia digital</span>
                     </div>
-
                     <div class="mini-tile">
                         <strong>ERP</strong>
                         <span>Gestión empresarial</span>
                     </div>
-
                     <div class="mini-tile">
-                        <strong>3D</strong>
-                        <span>Nuevas experiencias</span>
+                        <strong>Soporte</strong>
+                        <span>Evolución continua</span>
                     </div>
-
                 </div>
-
-            </div>
-
-            <div class="visual-card float-card float-one">
-
-                <strong>
-                    ☀ Calculadora Solar
-                </strong>
-
-                <span>
-                    Visualización 3D +
-                    análisis de inversión
-                </span>
-
             </div>
 
             <div class="visual-card float-card float-two">
-
-                <strong>
-                    Soluciones a medida
-                </strong>
-
-                <span>
-                    Para negocios y organizaciones
-                </span>
-
+                <strong>Soluciones a medida</strong>
+                <span>Para negocios y organizaciones</span>
             </div>
-
         </div>
-
     </div>
-
 </header>
 
+
 <nav>
-
     <div class="nav-brand">
-
-        <img
-            src="logo.png"
-            alt="Logo de CodesJG"
-        >
-
+        <img src="logo.png" alt="Logo de CodesJG">
         <span>CodesJG</span>
-
     </div>
-
     <a href="#inicio">Inicio</a>
-
-    <a href="#servicios">
-        Servicios
-    </a>
-
-    <a href="#catalogo">
-        Catálogo
-    </a>
-
-    <a href="#apps">
-        Proyectos
-    </a>
-
-    <a href="#privacidad">
-        Privacidad
-    </a>
-
-    <a href="#soporte">
-        Soporte
-    </a>
-
-    <a href="#contacto">
-        Contacto
-    </a>
-
+    <a href="#servicios">Servicios</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#apps">Proyectos</a>
+    <a href="#privacidad">Privacidad</a>
+    <a href="#soporte">Soporte</a>
+    <a href="#contacto">Contacto</a>
 </nav>
 
 <section>
-
     <div class="card reveal">
-
-        <h2>
-            Más que software:
-            soluciones para operar mejor.
-        </h2>
-
+        <h2>Soluciones digitales para negocios que quieren crecer</h2>
         <p>
-            En CodesJG transformamos necesidades
-            reales en herramientas digitales:
-            sistemas administrativos,
-            aplicaciones, páginas web y
-            soluciones personalizadas pensadas
-            para simplificar procesos y
-            mejorar la gestión.
+            En CodesJG transformamos necesidades reales en herramientas digitales: sistemas administrativos, aplicaciones, páginas web y soluciones personalizadas pensadas para simplificar procesos y mejorar la gestión.
         </p>
 
         <div class="metric-strip">
-
-            <div class="metric">
-
-                <strong>Apps</strong>
-
-                <span>
-                    Soluciones móviles
-                    y empresariales
-                </span>
-
-            </div>
-
-            <div class="metric">
-
-                <strong>Web</strong>
-
-                <span>
-                    Sitios modernos
-                    para negocios
-                </span>
-
-            </div>
-
-            <div class="metric">
-
-                <strong>ERP</strong>
-
-                <span>
-                    Control centralizado
-                    de operaciones
-                </span>
-
-            </div>
-
-            <div class="metric">
-
-                <strong>Soporte</strong>
-
-                <span>
-                    Acompañamiento técnico
-                </span>
-
-            </div>
-
+            <div class="metric"><strong>Apps</strong><span>Soluciones móviles y empresariales</span></div>
+            <div class="metric"><strong>Web</strong><span>Sitios modernos para negocios</span></div>
+            <div class="metric"><strong>ERP</strong><span>Control centralizado de operaciones</span></div>
+            <div class="metric"><strong>Soporte</strong><span>Acompañamiento técnico</span></div>
         </div>
-
     </div>
-
 </section>
 
+
+<!-- SERVICIOS -->
 <section id="servicios">
-
     <div class="card reveal">
-
-        <h2 class="section-title">
-            Lo que podemos construir contigo
-        </h2>
-
+        <h2 class="section-title">Lo que podemos construir contigo</h2>
         <p class="section-subtitle">
-            Desarrollamos soluciones adaptadas
-            a la operación, imagen y objetivos
-            de cada negocio.
+            Desarrollamos soluciones adaptadas a la operación, imagen y objetivos de cada negocio.
         </p>
 
         <div class="services">
-
             <div class="service-card">
-
-                <div class="service-icon">
-                    💻
-                </div>
-
-                <h3>
-                    Software a la medida
-                </h3>
-
-                <p>
-                    Sistemas para ventas,
-                    inventario, caja,
-                    clientes, reportes,
-                    sucursales y procesos
-                    específicos de cada empresa.
-                </p>
-
+                <div class="service-icon">💻</div>
+                <h3>Software a la medida</h3>
+                <p>Sistemas para ventas, inventario, caja, clientes, reportes, sucursales y procesos específicos de cada empresa.</p>
             </div>
 
             <div class="service-card">
-
-                <div class="service-icon">
-                    📱
-                </div>
-
-                <h3>
-                    Aplicaciones móviles
-                </h3>
-
-                <p>
-                    Apps modernas para Android
-                    orientadas a gestión,
-                    productividad,
-                    comercio y servicios.
-                </p>
-
+                <div class="service-icon">📱</div>
+                <h3>Aplicaciones móviles</h3>
+                <p>Apps modernas para Android orientadas a gestión, productividad, comercio y servicios.</p>
             </div>
 
             <div class="service-card">
-
-                <div class="service-icon">
-                    🌐
-                </div>
-
-                <h3>
-                    Páginas web para negocios
-                </h3>
-
-                <p>
-                    Sitios web profesionales
-                    para mostrar productos,
-                    servicios, catálogo,
-                    contacto, WhatsApp
-                    y presencia digital.
-                </p>
-
+                <div class="service-icon">🌐</div>
+                <h3>Páginas web para negocios</h3>
+                <p>Sitios web profesionales para mostrar productos, servicios, catálogo, contacto, WhatsApp y presencia digital.</p>
             </div>
 
             <div class="service-card">
-
-                <div class="service-icon">
-                    🛠️
-                </div>
-
-                <h3>
-                    Soporte y evolución
-                </h3>
-
-                <p>
-                    Mantenimiento, mejoras,
-                    nuevos módulos y
-                    acompañamiento técnico
-                    para soluciones existentes.
-                </p>
-
+                <div class="service-icon">🛠️</div>
+                <h3>Soporte y evolución</h3>
+                <p>Mantenimiento, mejoras, nuevos módulos y acompañamiento técnico para soluciones existentes.</p>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
+<!-- SECCIÓN CATÁLOGO + SOLICITUD DE SOFTWARE -->
 <section id="catalogo">
-
     <div class="card catalog-section reveal">
-
-        <h2>
-            Catálogo de Soluciones
-        </h2>
-
-        <p>
-            Consulta nuestro catálogo
-            de módulos y funcionalidades
-            para diseñar una solución
-            adaptada a tu negocio.
+        <h2>Catálogo de Soluciones</h2>
+        <p style="color: var(--text-muted); max-width: 700px; margin: 0 auto 20px auto;">
+            Consulta nuestro catálogo de módulos y funcionalidades para diseñar una solución adaptada a tu negocio.
         </p>
-
-        <a
-            class="button"
-            href="catalogo.pdf"
-            target="_blank"
-        >
+        <!-- Enlace a tu PDF -->
+        <a class="button" href="catalogo.pdf" target="_blank" rel="noopener">
             Ver Catálogo en PDF
         </a>
 
+        <!-- BLOQUE DE SOLICITUD DE SOFTWARE -->
         <div class="software-request-box">
-
-            <h3>
-                ¿Necesitas un software
-                a la medida para tu negocio?
-            </h3>
-
-            <p>
-                Cuéntanos qué idea o necesidad
-                tiene tu comercio y construimos
-                una solución adaptada a tu operación.
+            <h3>¿Necesitas un software a la medida para tu negocio?</h3>
+            <p style="color: var(--text-muted); max-width: 650px; margin: 10px auto 20px auto;">
+                Cuéntanos qué idea o necesidad tiene tu comercio y construimos la solución perfecta para ti. Envíanos un mensaje directo.
             </p>
-
-            <div class="hero-actions">
-
-                <a
-                    class="button"
-                    href="mailto:codesjg1@gmail.com?subject=Solicitud%20de%20Software%20Personalizado%20CodesJG"
-                >
+            <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a class="button" href="mailto:codesjg1@gmail.com?subject=Solicitud%20de%20Software%20Personalizado%20CodesJG&body=Hola%20CodesJG,%20quiero%20solicitar%20un%20software%20para%20mi%20negocio.%20Detalles:">
                     Enviar solicitud por correo
                 </a>
-
-                <a
-                    class="button button-whatsapp"
-                    href="https://wa.me/573107120348?text=Hola%20CodesJG,%20estoy%20interesado%20en%20solicitar%20un%20software%20para%20mi%20negocio."
-                    target="_blank"
-                >
+                <a class="button button-whatsapp" href="https://wa.me/573107120348?text=Hola%20CodesJG,%20estoy%20interesado%20en%20solicitar%20un%20software%20para%20mi%20negocio." target="_blank" rel="noopener">
                     Escribir por WhatsApp
                 </a>
-
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 <section id="apps">
-
     <div class="card reveal">
-
-        <h2>
-            Productos que ya estamos construyendo
-        </h2>
-
+        <h2>Productos que ya estamos construyendo</h2>
         <p>
-            Una muestra de soluciones
-            desarrolladas y productos
-            actualmente en evolución
-            dentro de CodesJG.
+            Una muestra de soluciones desarrolladas y productos actualmente en evolución dentro de CodesJG.
         </p>
 
         <div class="apps">
 
-            <div class="app">
-
+            <!-- Calculadora Solar -->
+            <div class="app project-highlight">
                 <div class="app-top">
-
-                    <h3>
-                        ☀️ Calculadora Solar
-                    </h3>
-
-                    <span class="status status-desarrollo">
-                        Próximamente en Google Play
-                    </span>
-
+                    <h3>☀️ Calculadora Solar</h3>
+                    <span class="status status-desarrollo">Próximamente en Google Play</span>
                 </div>
-
                 <p>
-                    Aplicación para planificar
-                    instalaciones solares y
-                    visualizar en 3D cómo podrían
-                    distribuirse los paneles en
-                    una vivienda o terreno.
+                    Aplicación para planificar instalaciones solares y visualizar en 3D cómo podrían distribuirse los paneles en una vivienda o terreno.
                 </p>
-
-                <h4>
-                    Funciones destacadas
-                </h4>
-
+                <h4>Funciones destacadas</h4>
                 <ul>
-                    <li>
-                        Visualización 3D de paneles
-                    </li>
-
-                    <li>
-                        Estimación de inversión y ahorro
-                    </li>
-
-                    <li>
-                        Cálculo de retorno de inversión
-                    </li>
-
-                    <li>
-                        Configuración según vivienda,
-                        terreno y paneles
-                    </li>
+                    <li>Visualización 3D de paneles</li>
+                    <li>Estimación de inversión y ahorro</li>
+                    <li>Cálculo de retorno de inversión</li>
+                    <li>Configuración según vivienda, terreno y paneles</li>
                 </ul>
-
             </div>
 
+            <!-- NUEVA APP: Farmacia de la Costa -->
             <div class="app">
-
-                <h3>
-                    💊 Farmacia de la Costa
-                </h3>
-
+                <h3>💊 Farmacia de la Costa</h3>
                 <span class="status status-desarrollo">
                     En Desarrollo
                 </span>
-
                 <p>
-                    Sistema especializado
-                    para la administración
-                    inteligente de farmacias.
+                    Sistema especializado en desarrollo para la administración inteligente de farmacias, enfocado en el control estricto de productos y normativas del sector salud.
                 </p>
-
-                <h4>
-                    Funciones principales
-                </h4>
-
+                <h4>Funciones principales</h4>
                 <ul>
-                    <li>
-                        Ventas y control de caja
-                    </li>
-
-                    <li>
-                        Control avanzado
-                        de vencimientos
-                    </li>
-
-                    <li>
-                        Laboratorios
-                        y proveedores
-                    </li>
-
-                    <li>
-                        Finanzas y reportes
-                    </li>
+                    <li>Ventas y control de caja</li>
+                    <li>Control avanzado de vencimientos</li>
+                    <li>Gestión de laboratorios y proveedores</li>
+                    <li>Finanzas y reportes especializados</li>
                 </ul>
-
             </div>
 
+            <!-- Gestor de Mi Negocio -->
             <div class="app">
-
-                <h3>
-                    📱 Gestor de Mi Negocio
-                </h3>
-
+                <h3>📱 Gestor de Mi Negocio</h3>
                 <span class="status status-playstore">
                     Google Play
                 </span>
-
                 <p>
-                    Aplicación empresarial
-                    para administrar ventas,
-                    inventario, productos,
-                    clientes, gastos
-                    y reportes.
+                    Lanzada el 14/08/2026. Con descargas activas en las principales ciudades de Colombia y uso regional expandido en Colombia y Perú.
                 </p>
-
-                <h4>
-                    Funciones principales
-                </h4>
-
+                <h4>Funciones principales</h4>
                 <ul>
                     <li>Ventas e Inventario</li>
                     <li>Productos y Clientes</li>
                     <li>Proveedores y Gastos</li>
                     <li>Reportes financieros</li>
                 </ul>
-
-                <a
-                    class="button button-playstore"
-                    href="https://play.google.com/store/apps/details?id=com.codesjg.gestionminegocio&hl=es_419"
-                    target="_blank"
-                >
+                <a class="button button-playstore" href="https://play.google.com/store/apps/details?id=com.codesjg.gestionminegocio&hl=es_419" target="_blank" rel="noopener">
                     Descargar App
                 </a>
-
             </div>
 
+            <!-- ERP Empresarial -->
             <div class="app">
-
-                <h3>
-                    🏢 ERP Empresarial
-                </h3>
-
+                <h3>🏢 ERP Empresarial</h3>
                 <span class="status status-en-uso">
                     En Uso
                 </span>
-
                 <p>
-                    Plataforma centralizada
-                    para administrar múltiples
-                    establecimientos comerciales
-                    desde un único sistema.
+                    Plataforma centralizada diseñada para la administración integral de múltiples establecimientos comerciales desde un único lugar.
                 </p>
-
-                <h4>
-                    Funciones principales
-                </h4>
-
+                <h4>Funciones principales</h4>
                 <ul>
                     <li>Control Multi-negocio</li>
                     <li>Caja, Ventas y Gastos</li>
-                    <li>Bodega e Inventarios</li>
-                    <li>Reportes y Roles</li>
+                    <li>Bodega central e Inventarios</li>
+                    <li>Reportes y Permisos por roles</li>
                 </ul>
-
             </div>
 
+            <!-- Helatto -->
             <div class="app">
-
-                <h3>
-                    🍨 Helatto
-                </h3>
-
+                <h3>🍨 Helatto</h3>
                 <span class="status status-en-uso">
                     En Uso
                 </span>
-
                 <p>
-                    Aplicación especializada
-                    para heladerías y
-                    control operativo.
+                    Aplicación especializada para heladerías, optimizada para agilizar la atención en mostrador y el control operativo interno.
                 </p>
-
-                <h4>
-                    Funciones principales
-                </h4>
-
+                <h4>Funciones principales</h4>
                 <ul>
                     <li>Gestión de mesas</li>
-                    <li>Toppings y adiciones</li>
-                    <li>Finanzas y caja</li>
-                    <li>Ventas</li>
+                    <li>Control de toppings y adiciones</li>
+                    <li>Finanzas y caja diaria</li>
+                    <li>Ventas optimizadas</li>
                 </ul>
-
             </div>
 
+            <!-- Legendario App -->
             <div class="app">
-
-                <h3>
-                    🍔 Legendario App
-                </h3>
-
+                <h3>🍔 Legendario App</h3>
                 <span class="status status-en-uso">
                     En Uso
                 </span>
-
                 <p>
-                    Sistema diseñado para
-                    administración de restaurantes,
-                    comandas, ventas e inventario.
+                    Sistema a la medida para el restaurante <strong>El Legendario</strong> (Maicao, La Guajira), automatizando comandas, ventas y control de caja.
                 </p>
-
-                <h4>
-                    Funciones principales
-                </h4>
-
+                <h4>Funciones principales</h4>
                 <ul>
                     <li>Ventas rápidas</li>
-                    <li>Inventario</li>
+                    <li>Control de inventario</li>
                     <li>Gastos y reportes</li>
                     <li>Panel administrativo</li>
                 </ul>
-
             </div>
 
+            <!-- Ziba Clothes -->
             <div class="app">
-
-                <h3>
-                    👕 Ziba Clothes
-                </h3>
-
+                <h3>👕 Ziba Clothes</h3>
                 <span class="status status-en-uso">
                     En Uso
                 </span>
-
                 <p>
-                    Software de gestión
-                    para tiendas de ropa,
-                    inventario y apartados.
+                    Software de gestión enfocado en tiendas de ropa de Maicao, La Guajira, facilitando el control de prendas, stock y sistema de apartados.
                 </p>
-
-                <h4>
-                    Funciones principales
-                </h4>
-
+                <h4>Funciones principales</h4>
                 <ul>
-                    <li>
-                        Inventario de prendas
-                    </li>
-
-                    <li>
-                        Control de apartados
-                    </li>
-
-                    <li>
-                        Clientes y proveedores
-                    </li>
-
-                    <li>
-                        Reportes comerciales
-                    </li>
+                    <li>Inventario detallado de prendas</li>
+                    <li>Control de apartados</li>
+                    <li>Clientes y proveedores</li>
+                    <li>Reportes comerciales</li>
                 </ul>
-
             </div>
 
         </div>
-
     </div>
-
 </section>
 
 <section id="privacidad">
-
     <div class="card reveal">
-
-        <h2>
-            Política de Privacidad y Datos
-        </h2>
-
+        <h2>Política de Privacidad y Datos</h2>
         <p>
-            En CodesJG resguardamos
-            la integridad y confidencialidad
-            de la información gestionada
-            en nuestras plataformas.
+            En CodesJG resguardamos la integridad y confidencialidad de la información gestionada en todas nuestras plataformas.
         </p>
-
         <hr>
-
-        <h3>
-            Recopilación y Uso
-        </h3>
-
+        <h3>Recopilación y Uso</h3>
         <ul>
-
-            <li>
-                Datos de perfil de usuario
-                y credenciales de acceso.
-            </li>
-
-            <li>
-                Información de inventarios,
-                ventas y registros comerciales.
-            </li>
-
-            <li>
-                Sincronización segura
-                mediante infraestructura
-                de Google Firebase.
-            </li>
-
+            <li>Datos de perfil de usuario y credenciales de acceso.</li>
+            <li>Información de inventarios, ventas y registros comerciales del negocio.</li>
+            <li>Sincronización segura en tiempo real mediante infraestructura de Google Firebase.</li>
         </ul>
-
-        <p style="margin-top:15px;">
-
-            CodesJG no comercializa
-            datos personales ni corporativos.
-
-            Para solicitar eliminación
-            de una cuenta puedes escribir a
-
-            <a
-                href="mailto:codesjg1@gmail.com"
-                style="color:#0b7a4b;"
-            >
-                codesjg1@gmail.com
-            </a>.
-
+        <p style="margin-top: 15px;">
+            CodesJG no comercializa datos personales ni corporativos bajo ninguna circunstancia. Para solicitar la eliminación total de tus registros y datos asociados, puedes escribir directamente a <a href="mailto:codesjg1@gmail.com" style="color:var(--neon-green)">codesjg1@gmail.com</a> con el asunto <em>"Solicitud de eliminación de cuenta"</em>.
         </p>
-
     </div>
-
 </section>
 
 <section id="soporte">
-
     <div class="card reveal">
-
-        <h2>
-            Soporte Técnico Especializado
-        </h2>
-
+        <h2>Soporte Técnico Especializado</h2>
         <p>
-            Brindamos acompañamiento técnico
-            para resolver incidencias,
-            configurar sistemas y evolucionar
-            las soluciones implementadas.
+            Brindamos acompañamiento técnico para resolver incidencias, configurar sistemas y evolucionar las soluciones implementadas.
         </p>
-
         <ul>
-
-            <li>
-                Recuperación de accesos
-                y cuentas.
-            </li>
-
-            <li>
-                Sincronización de datos
-                e inventarios.
-            </li>
-
-            <li>
-                Reporte de errores
-                o fallas operativas.
-            </li>
-
-            <li>
-                Solicitudes de nuevas
-                características.
-            </li>
-
+            <li>Recuperación de accesos y cuentas.</li>
+            <li>Sincronización de datos e inventarios.</li>
+            <li>Reporte de errores o fallas operativas.</li>
+            <li>Peticiones de nuevas características o módulos.</li>
         </ul>
-
-        <a
-            class="button"
-            href="mailto:codesjg1@gmail.com?subject=Soporte%20Técnico%20CodesJG"
-        >
-            Contactar Soporte
-        </a>
-
+        <div style="margin-top: 20px;">
+            <a class="button" href="mailto:codesjg1@gmail.com?subject=Soporte%20Técnico%20CodesJG">
+                Contactar Soporte
+            </a>
+        </div>
     </div>
-
 </section>
 
+
 <section>
-
     <div class="card cta-card reveal">
-
-        <h2>
-            ¿Tienes una idea o necesitas
-            digitalizar tu negocio?
-        </h2>
-
-        <p>
-            Cuéntanos qué necesitas
-            y evaluamos una solución
-            práctica, escalable
-            y adaptada a tu operación.
+        <h2>¿Tienes una idea o necesitas digitalizar tu negocio?</h2>
+        <p style="max-width:700px;margin:0 auto;color:var(--text-muted);">
+            Cuéntanos qué necesitas y evaluamos una solución práctica, escalable y adaptada a tu operación.
         </p>
-
         <div class="hero-actions">
-
-            <a
-                class="button button-whatsapp"
-                href="https://wa.me/573107120348?text=Hola%20CodesJG,%20quiero%20cotizar%20un%20proyecto%20digital."
-                target="_blank"
-            >
+            <a class="button button-whatsapp" href="https://wa.me/573107120348?text=Hola%20CodesJG,%20quiero%20cotizar%20un%20proyecto%20digital." target="_blank" rel="noopener">
                 Hablar por WhatsApp
             </a>
-
-            <a
-                class="button"
-                href="mailto:codesjg1@gmail.com?subject=Cotización%20de%20Proyecto%20CodesJG"
-            >
+            <a class="button" href="mailto:codesjg1@gmail.com?subject=Cotización%20de%20Proyecto%20CodesJG">
                 Solicitar información
             </a>
-
         </div>
-
     </div>
-
 </section>
 
 <section id="contacto">
-
     <div class="card reveal">
-
-        <h2>
-            Canales de Contacto
-        </h2>
-
-        <p>
-            Comunícate directamente
-            con CodesJG para desarrollo,
-            soporte y cotizaciones.
+        <h2>Canales de Contacto Oficiales</h2>
+        <p style="color: var(--text-muted); margin-bottom: 20px;">
+            Comunícate directamente con nosotros a través de nuestros canales oficiales de atención empresarial y desarrollo.
         </p>
-
+        
         <div class="contact-grid">
-
             <div class="contact-card">
-
-                <h3>
-                    📧 Correo Electrónico
-                </h3>
-
-                <p>
-                    Contratos, soporte
-                    y cotizaciones:
-                </p>
-
-                <a
-                    href="mailto:codesjg1@gmail.com"
-                >
-                    codesjg1@gmail.com
-                </a>
-
+                <h3>📧 Correo Electrónico</h3>
+                <p style="margin: 10px 0;">Para contratos, soporte y cotizaciones:</p>
+                <a href="mailto:codesjg1@gmail.com">codesjg1@gmail.com</a>
             </div>
 
             <div class="contact-card">
-
-                <h3>
-                    💬 WhatsApp
-                </h3>
-
-                <p>
-                    Atención directa:
-                </p>
-
-                <a
-                    href="https://wa.me/573107120348?text=Hola%20CodesJG,%20quiero%20más%20información%20sobre%20sus%20servicios."
-                    target="_blank"
-                >
-                    +57 310 7120348
-                </a>
-
+                <h3>💬 WhatsApp Oficial</h3>
+                <p style="margin: 10px 0;">Atención directa y rápida:</p>
+                <a href="https://wa.me/573107120348?text=Hola%20CodesJG,%20quiero%20más%20información%20sobre%20sus%20servicios." target="_blank" rel="noopener">+57 310 7120348</a>
             </div>
-
         </div>
-
     </div>
-
 </section>
 
 <footer>
-
     <h3>CodesJG</h3>
-
-    <p>
-        Software Empresarial •
-        Apps Móviles •
-        Páginas Web •
-        ERP •
-        Soluciones a la medida
-    </p>
-
+    <p>Software Empresarial • Apps Móviles • Páginas Web • ERP • Soluciones a la medida</p>
     <br>
-
-    <p>
-        © 2026 CodesJG.
-        Todos los derechos reservados.
-    </p>
-
+    <p>© 2026 CodesJG. Todos los derechos reservados.</p>
 </footer>
 
+
 <script>
+document.addEventListener("DOMContentLoaded", () => {
+    const revealElements = document.querySelectorAll(".reveal");
 
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.12 });
 
-        const revealElements =
-            document.querySelectorAll(
-                ".reveal"
-            );
+    revealElements.forEach(el => observer.observe(el));
 
-        const observer =
-            new IntersectionObserver(
-                (entries) => {
-
-                    entries.forEach(
-                        entry => {
-
-                            if(
-                                entry.isIntersecting
-                            ){
-
-                                entry.target
-                                    .classList
-                                    .add(
-                                        "visible"
-                                    );
-
-                                observer
-                                    .unobserve(
-                                        entry.target
-                                    );
-                            }
-
-                        }
-                    );
-
-                },
-                {
-                    threshold:0.12
-                }
-            );
-
-        revealElements.forEach(
-            element =>
-                observer.observe(
-                    element
-                )
-        );
-
-        document
-            .querySelectorAll(
-                'nav a[href^="#"]'
-            )
-            .forEach(
-                link => {
-
-                    link.addEventListener(
-                        "click",
-                        () => {
-
-                            document
-                                .querySelectorAll(
-                                    "nav a"
-                                )
-                                .forEach(
-                                    item =>
-                                        item.classList
-                                            .remove(
-                                                "active"
-                                            )
-                                );
-
-                            link.classList
-                                .add(
-                                    "active"
-                                );
-
-                        }
-                    );
-
-                }
-            );
-
-    }
-);
-
+    document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+        link.addEventListener("click", () => {
+            document.querySelectorAll("nav a").forEach(item => item.classList.remove("active"));
+            link.classList.add("active");
+        });
+    });
+});
 </script>
 
 </body>
